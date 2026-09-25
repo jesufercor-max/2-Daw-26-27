@@ -1,0 +1,27 @@
+Imagen de Fotografía
+
+nombre del archivo: images.jpeg
+autor: KunstLoft
+origen: https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.kunstloft.es%2Frevista%2Fel-poder-de-la-fotografia%2F%3Fsrsltid%3DAU7gw4VWFYibTl0rjSIof4TAT_TRJocihqqzPJ9gaQi5fYytZL4t_Qfe&ved=0CBYQjRxqFwoTCKC1jffFiZcDFQAAAAAdAAAAABA4&opi=89978449 
+licencia: google
+
+Imagen de Dibujo
+
+nombre del archivo: images3.jpeg
+autor: Wikipedia
+origen: https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fes.wikipedia.org%2Fwiki%2FPintura&ved=0CBYQjRxqFwoTCMie8rbFiZcDFQAAAAAdAAAAABA4&opi=89978449
+licencia: google
+
+Imagen de Cocina
+
+nombre del archivo: images2.jpeg
+autor: Cooking Surface
+origen: https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fwww.cookingsurface.com%2Fblog%2Ftendencias-en-cocinas%2F&ved=0CBYQjRxqFwoTCMDgyovGiZcDFQAAAAAdAAAAABBU&opi=89978449
+licencia: google
+
+Audio
+
+nombre del archivo: audio.mp3
+autor: Art Creatix MC
+origen: https://youtu.be/QJG_VSWKLD4
+licencia: es de youtube

@@ -1,31 +1,77 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Formularios de solicitudes</title>
-  </head>
-  <body>
-    <header>
-      <p>AulaActiva</p>
-      <nav aria-label="Principal">
-        <a href="index.html">Inicio</a>
-        <a href="catalogo.html">Actividades</a>
-        <a href="detalle.html">Detalles</a>
-        <a href="solicitud.html">Solicitud de plazas</a>
-      </nav>
-    </header>
-    <main>
-      <h1>Solicitud de plazas</h1>
-      <p>Este es el formulario para solicitar plazas en nuestras actividades.</p>
-      <p>Por favor, rellena todos los campos requeridos y envía tu solicitud.</p>
-      <p>Los campos marcados con un asterisco (*) son obligatorios.</p>
 
-      <form 
-    </main>
-    <footer>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Formularios de solicitudes</title>
+</head>
+
+<body>
+  <header>
+    <p>AulaActiva</p>
+    <nav aria-label="Principal">
+      <a href="index.html">Inicio</a>
+      <a href="catalogo.html">Actividades</a>
+      <a href="detalle.html">Detalles</a>
+      <a href="solicitud.html">Solicitud de plazas</a>
+    </nav>
+  </header>
+  <main>
+    <h1>Solicitud de plazas</h1>
+    <p>Este es el formulario para solicitar plazas en nuestras actividades.</p>
+    <p>Por favor, rellena todos los campos requeridos y envía tu solicitud.</p>
+    <p>Los campos marcados con un asterisco (*) son obligatorios.</p>
+
+    <form id="formulario" method="get">
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" required autocomplete="name" />
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" required autocomplete="email" />
+
+      <label for="actividad">Actividad a solicitar *</label>
+      <select id="actividad" name="actividad" required>
+        <option value="">Seleccione una actividad</option>
+        <option value="fotografia">Fotografia</option>
+        <option value="cocina">cocina</option>
+        <option value="dibujo">Dibujo</option>
+      </select>
+
+      <label for="plazas">Número de plazas *</label>
+      <p id="ayuda-plazas">Puedes solicitar entre 1 y 4 plazas.</p>
+      <input type="number" id="plazas" name="plazas" min="1" max="4" step="1" value="1" aria-describedby="ayuda-plazas"
+        required />
+
       <p></p>
-      <a href="index.html">Volver al inicio</a>
-    </footer>
-  </body>
+      <label for="turno">Turno preferido *</label>
+      <p></p>
+      <imput type="radio" id="turno-m" name="turno" value="mañana" />
+      <label for="turno-m">Mañana</label>
+      <p></p>
+      <input type="radio" id="turno-t" name="turno" value="tarde" required />
+      <label for="turno-t">Tarde</label>
+
+      <p></p>
+      <label for="recordatorio">Recordatorio de la actividad</label>
+      <p></p>
+      <input type="checkbox" id="recordatorio" name="recordatorio" value="si" />
+      <label for="recordatorio">Quiero un recordatorio</label>
+      <p></p>
+      <textarea id="comentarios" name="comentarios" maxlength="300" rows="3"></textarea>
+
+      <p></p>
+        <button type="submit">Probar Solicitud</button>
+      </form>
+    </form>
+
+  </main>
+
+  <footer>
+    <p></p>
+    <a href="index.html">Volver al inicio</a>
+  </footer>
+
+</body>
+
 </html>

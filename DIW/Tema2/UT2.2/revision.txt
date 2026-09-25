@@ -1,48 +1,117 @@
-# Pruebas y validación del proyecto AulaActiva
+REVISIÓN DEL PROYECTO
 
-**Nombre:** Jesús Fernández
-**Temática:** AulaActiva – Actividades educativas
+TABLA DE REVISIÓN DE LOS ARCHIVOS HTML
 
-## Registro de pruebas
+| Archivo        | Elementos revisados                                                                          | Resultado                                            |
+| -------------- | -------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| index.html     | Estructura HTML, encabezado, navegación, contenido principal, audio, transcripción y enlaces | Correcto                                             |
+| catalogo.html  | Enlaces y estructura del catálogo de actividades                                             | Correcto                                             |
+| detalle.html   | Secciones de actividades, imágenes, atributos alt, listas, enlaces y anclas                  | Correcto                                             |
+| solicitud.html | Formulario, campos obligatorios, etiquetas label, inputs, select, radio, checkbox y textarea | Correcto, con pequeños errores de código corregibles |
+| Imágenes       | Comprobación de las imágenes utilizadas en detalle.html y sus atributos alt                  | Correcto                                             |
+| Audio          | Comprobación del elemento audio y su transcripción en index.html                             | Correcto                                             |
+| Navegación     | Comprobación de los enlaces entre Inicio, Actividades, Detalles y Solicitud                  | Correcto                                             |
+| Formulario     | Comprobación de los campos obligatorios y del envío mediante GET                             | Correcto                                             |
 
-| Prueba realizada                                           | Resultado | Corrección aplicada                                                                    |
-| ---------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------- |
-| Comprobación del menú de `index.html`                      | Correcto  | El menú permite acceder a Inicio, Actividades y Detalles.                              |
-| Comprobación del menú de `catalogo.html`                   | Correcto  | Se comprobó que los enlaces de navegación funcionan correctamente.                     |
-| Comprobación del menú de `detalle.html`                    | Correcto  | Se comprobó que los enlaces de navegación funcionan correctamente.                     |
-| Comprobación del enlace al detalle de Fotografía           | Correcto  | Se añadió `id="fotografia"` a la sección correspondiente.                              |
-| Comprobación del enlace al detalle de Cocina               | Correcto  | Se añadió `id="cocina"` a la sección correspondiente.                                  |
-| Comprobación del enlace al detalle de Dibujo               | Correcto  | Se añadió `id="dibujo"` a la sección correspondiente.                                  |
-| Recorrido de las páginas mediante teclado                  | Correcto  | Se comprobó que se puede recorrer los enlaces utilizando la tecla `Tab`.               |
-| Validación de `index.html` mediante W3C Nu Html Checker    | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
-| Validación de `catalogo.html` mediante W3C Nu Html Checker | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
-| Validación de `detalle.html` mediante W3C Nu Html Checker  | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
+OBSERVACIONES DE LA REVISIÓN
 
-## Estado final
+En la revisión del proyecto se han comprobado los archivos HTML, los enlaces entre las páginas, las imágenes, el audio y el formulario de solicitud.
 
-Las pruebas principales de las tres páginas han sido realizadas. Los enlaces del catálogo hacia cada detalle funcionan mediante sus correspondientes identificadores y los tres documentos HTML han sido comprobados mediante **W3C Nu Html Checker**.
+En el formulario se ha comprobado que el campo del correo electrónico es obligatorio. Para ello, se ha intentado enviar la solicitud sin rellenar dicho campo y el navegador no permite realizar el envío porque el campo contiene el atributo required.
 
-No quedan pruebas pendientes.
+También se han revisado los elementos multimedia. Las imágenes utilizadas en detalle.html tienen un atributo alt que permite describir su contenido, y el audio de index.html incluye una transcripción para facilitar el acceso al contenido.
 
+En la navegación se han comprobado los enlaces principales entre las diferentes páginas del proyecto.
 
-## Preguntas
+ERRORES DETECTADOS
 
-### 1. ¿Qué diferencia hay entre `head` y `header`?
+Durante la revisión del código se han detectado algunos pequeños errores que deberían corregirse:
 
-La etiqueta `head` contiene información sobre la página que no se muestra directamente al usuario, como el título, la configuración de caracteres o el viewport.
+* En solicitud.html aparece <imput type="radio"...>. El elemento correcto es <input type="radio"...>.
+* En solicitud.html aparece un cierre </form> duplicado después del formulario. Solo debe existir un cierre </form>.
+* En detalle.html falta la estructura completa de <html>, <head> y <body> al principio del documento.
+* En index.html, el atributo width y height está colocado dentro de <source>. Estos atributos no son necesarios para el elemento audio.
+* En detalle.html, algunas duraciones deberían estar expresadas correctamente, por ejemplo "1 hora" en lugar de "1 horas".
+* Se puede mejorar la redacción de algunos textos, por ejemplo "Fotografia" debería escribirse "Fotografía".
 
-En cambio, `header` forma parte del contenido de la página y sí puede aparecer visualmente. Se suele utilizar para colocar la cabecera, el nombre de la página o el menú de navegación.
+VALIDACIÓN REALIZADA
 
-### 2. ¿Por qué has usado `article` en las fichas del catálogo?
+En la validación hemos comprobado si se podría enviar la solicitud en caso de no rellenar el email. No es posible, ya que el campo de correo electrónico es obligatorio y tiene el atributo required.
 
-He utilizado `article` porque cada actividad del catálogo es un contenido independiente. Cada una tiene su propio título, descripción y enlace para ver sus detalles.
+Esto permite comprobar que la validación básica del formulario funciona correctamente.
 
-Por ejemplo, la actividad de fotografía es una ficha independiente de la actividad de cocina o de dibujo, por lo que `article` es adecuado para separar cada una de ellas.
+PREGUNTAS DE REVISIÓN
 
-### 3. Explica las dos partes de `detalle.html#fotografia` usando un enlace de tu proyecto.
+1. Copia un campo de tu formulario y explica para qué sirven id, name y for.
 
-El enlace `detalle.html#fotografia` tiene dos partes.
+Campo utilizado:
 
-`detalle.html` indica el archivo HTML que queremos abrir. Por otro lado, `#fotografia` indica el lugar concreto dentro de ese archivo al que queremos ir.
+<input type="email" id="email" name="email" required autocomplete="email" />
 
-En mi proyecto, desde `catalogo.html`, utilizo el enlace `detalle.html#fotografia` para acceder a los detalles de la actividad de fotografía. El navegador abre `detalle.html` y busca el elemento que tiene `id="fotografia"`, llevándonos directamente hasta esa sección.
+* id="email": identifica de forma única el campo dentro de la página y permite relacionarlo con su etiqueta.
+* name="email": indica el nombre del dato que se enviará cuando se envíe el formulario.
+* for="email": se utiliza en la etiqueta label para relacionarla con el campo que tiene ese mismo id.
+
+En este caso:
+
+<label for="email">Correo electrónico *</label>
+
+El atributo for="email" hace referencia al id="email" del campo.
+
+2. ¿Por qué los radio del turno tienen el mismo name?
+
+Los dos botones de opción del turno tienen el mismo atributo name="turno" porque pertenecen al mismo grupo de opciones.
+
+De esta manera, solamente se puede seleccionar una de las dos opciones: "Mañana" o "Tarde".
+
+Si cada botón tuviera un name diferente, podrían seleccionarse los dos al mismo tiempo.
+
+3. Escribe tres pares nombre=valor observados en un envío válido.
+
+Tres ejemplos de pares nombre=valor que se pueden observar en un envío válido son:
+
+nombre=Juan%20Pérez
+email=[juan@gmail.com](mailto:juan@gmail.com)
+actividad=fotografia
+
+También se pueden enviar otros datos, como:
+
+plazas=2
+turno=mañana
+recordatorio=si
+
+4. ¿Qué ocurre con el dato de recordatorio cuando no marcas la casilla?
+
+Cuando la casilla de recordatorio no está marcada, no se envía ningún dato para ese campo.
+
+Cuando sí está marcada, se envía:
+
+recordatorio=si
+
+Por tanto, si no se marca la casilla, recordatorio=si no aparece en los datos enviados.
+
+5. ¿Se ha guardado una reserva real? Explica qué faltaría.
+
+No, no se ha guardado una reserva real.
+
+El formulario utiliza method="get", por lo que los datos se envían mediante la URL. Actualmente solamente se está comprobando el funcionamiento del formulario.
+
+Para guardar una reserva real sería necesario disponer de un servidor que recibiera los datos, los procesara y los almacenara, por ejemplo, en una base de datos.
+
+También sería necesario indicar mediante el atributo action la dirección del servidor que recibiría los datos.
+
+6. Copia un alt de tu proyecto y justifica qué información aporta.
+
+Ejemplo:
+
+alt="Fotografía"
+
+Este texto proporciona una descripción de la imagen. Es útil para las personas que utilizan lectores de pantalla y también en caso de que la imagen no pueda cargarse.
+
+En este caso, "Fotografía" permite conocer de forma sencilla qué representa la imagen.
+
+CONCLUSIÓN
+
+La revisión del proyecto permite comprobar que las páginas HTML están conectadas correctamente mediante los enlaces de navegación y que se han utilizado diferentes elementos HTML, como encabezados, párrafos, listas, imágenes, audio, formularios y enlaces.
+
+El formulario también ha sido comprobado mediante la validación del campo de correo electrónico. Al
