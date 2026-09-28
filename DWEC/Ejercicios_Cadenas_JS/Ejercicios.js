@@ -74,17 +74,36 @@ alert(EspacioEnBlancosPorGuiones());
 
 // 8. Comprueba si una cadena de texto contiene una palabra concreta
 
-function BuscarPlabara(){
-    let frase = prompt("frase: ")
-    let palabra = prompt("que palabra buscamos? : ")
-    for (palabra, x=frase.length, x++)[
-        
-    ]
-    return palabra
+function BuscarPalabra() {
+
+    let frase = prompt("Frase: ");
+    let palabra = prompt("¿Qué palabra buscamos?: ");
+
+    return frase.includes(palabra);
 }
+
+console.log(BuscarPalabra());
 
 // 9. Comprueba si dos strings son iguales
 
+function StringsIguales() {
 
+    let texto1 = prompt("Introduce el primer texto: ");
+    let texto2 = prompt("Introduce el segundo texto: ");
+
+    return texto1 === texto2;
+}
+
+console.log(StringsIguales());
 
 // 10. Comprueba si dos strings tienen la misma longitud
+
+function MismaLongitud() {
+
+    let texto1 = prompt("Introduce el primer texto: ");
+    let texto2 = prompt("Introduce el segundo texto: ");
+
+    return texto1.length === texto2.length;
+}
+
+console.log(MismaLongitud());
