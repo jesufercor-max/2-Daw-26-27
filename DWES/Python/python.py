@@ -78,17 +78,71 @@ print(suma)
 
 # 10. Crea una lista de números y calcula su promedio.
 
+"""
 lista = [1,2,3,4,5,6,7,8,9,10]
 
 contador = len(lista)
 promedio= sum(lista)/contador
 print(promedio)
+"""
 
 #11. Crea una clase llamada Persona con atributos nombre y edad. Luego, crea un objeto de tipo Persona e imprime sus atributos.
 
+"""
+class Persona():
+    def __init__(self, nombre, edad = ""):
+        self.nombre = nombre
+        self.edad = edad
+
+persona1= Persona("Jesus", '25')
+print("se llama" ,persona1.nombre, " y tiene " , persona1.edad, " años")
+"""
+
 # 12. Crea una clase llamada Rectangulo con atributos ancho y altura. Agrega un método para calcular el área del rectángulo y otro para calcular su perímetro.
 
+"""
+class Rectangulo():
+    def __init__(self, ancho, altura = ""):
+        self.ancho = ancho
+        self.altura = altura
+    
+    def calcularArea(self):
+        return (self.ancho*self.altura)
+
+    def calcularPerimetro(self):
+        return((self.ancho*2) + (self.altura*2))
+
+rectangulo1= Rectangulo( 3 , 4)
+print(rectangulo1.calcularArea()) 
+print(rectangulo1.calcularPerimetro())
+"""
+
 # 13. Crea una clase llamada Estudiante con atributos nombre, edad y curso. Crea varios objetos de tipo. Estudiante y almacénalos en una lista. Luego, itera sobre la lista e imprime la información de cada estudiante.
+
+
+class Estudiante():
+    def __init__(self, nombre, edad, curso = ""):
+        self.nombre = nombre
+        self.edad = edad
+        self.curso = curso
+    
+    def mostrarNombre(self):
+         return("Nombre: " , self.nombre)
+    
+    def mostrarEdad(self):
+         return("Edad: " , self.edad)
+    
+    def mostrarCurso(self):
+         return("Curso: " , self.curso)
+        
+estudiante1 = Estudiante ("Jesus" , 25 , '2º')
+estudiante2 = Estudiante ("Ana" , 20 , '2º')
+estudiante3 = Estudiante ("Carlos" , 25 , '1º')
+
+listaEstudiante =[estudiante1,estudiante2,estudiante3]
+
+for estudiante in listaEstudiante:
+    print(estudiante.mostrarNombre(),estudiante.mostrarEdad(),estudiante.mostrarCurso())
 
 # 14. Crea una clase llamada CuentaBancaria con atributos titular y saldo. Agrega métodos para depositar y retirar dinero de la cuenta.
 
