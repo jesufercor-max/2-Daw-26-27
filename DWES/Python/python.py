@@ -119,7 +119,7 @@ print(rectangulo1.calcularPerimetro())
 
 # 13. Crea una clase llamada Estudiante con atributos nombre, edad y curso. Crea varios objetos de tipo. Estudiante y almacénalos en una lista. Luego, itera sobre la lista e imprime la información de cada estudiante.
 
-
+"""
 class Estudiante():
     def __init__(self, nombre, edad, curso = ""):
         self.nombre = nombre
@@ -143,8 +143,45 @@ listaEstudiante =[estudiante1,estudiante2,estudiante3]
 
 for estudiante in listaEstudiante:
     print(estudiante.mostrarNombre(),estudiante.mostrarEdad(),estudiante.mostrarCurso())
+"""
 
 # 14. Crea una clase llamada CuentaBancaria con atributos titular y saldo. Agrega métodos para depositar y retirar dinero de la cuenta.
+
+class CuentaBancaria():
+    def __init__(self, titular, saldo = ""):
+        self.titular = titular
+        self.saldo = saldo
+        
+    def mostrarTitular(self):
+        return("Titular: " , self.titular)
+    
+    def mostrarSaldo(self):
+        return("Saldo acrtual: " , self.saldo)
+    
+    def depositarDinero(self):
+        dinero=input("Introducir dinero que quiera depoditar: ")
+        saldoActualizado = self.saldo+dinero
+        return("saldo antiguo: " , self.mostrarSaldo , "\n saldo ingresado: " , dinero, "\n saldo actualizado: ", saldoActualizado)
+    
+    def retirarDinero(self):
+        dinero=input("Introducir dinero que quiera depoditar: ")
+        saldoActualizado = self.saldo-dinero
+        return("saldo antiguo: " , self.mostrarSaldo , "\n saldo retirado: " , dinero, "\n saldo actualizado: ", saldoActualizado)
+
+    def eleccionDelUsuario(self):
+        textoMenu=print("Buenas " ,self.titular, ". Usted dispone de " ,self.saldo, " €. \n¿Desea ingresar o retirar? \nEn caso de que desee ingresar pulse 1, si deseea retirar pulse 2: ")
+        eleccion =input(textoMenu)
+        match eleccion:
+            case "1":
+                print(self.depositarDinero())
+            case "2":
+                print(self.retirarDinero())
+            case _:
+                print("Opción no válida.")
+
+usuario1= CuentaBancaria ("Jesus", 130)
+
+usuario1.eleccionDelUsuario()
 
 # 15. Crea una clase llamada Coche con atributos marca y modelo. Crea un método que imprima la información del coche en un formato legible.
 
