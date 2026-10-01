@@ -1,0 +1,50 @@
+
+1. Explica selector, propiedad y valor con una regla tuya.
+------------------------------------------------------------------------
+Tomando la regla:
+.aviso {
+    color: #8b2500;
+}
+- Selector: `.aviso` indica al navegador a qué elementos del HTML aplicar el estilo (en este caso, a todos los elementos con la clase "aviso").
+- Propiedad: `color` es la característica física o visual que se desea modificar (el color del texto).
+- Valor: `#8b2500` es el ajuste o medida exacta asignada a la propiedad (un tono específico de marrón rojizo).
+
+2. ¿Por qué .tarjeta h3 no selecciona el h1 de la cabecera?
+------------------------------------------------------------------------
+Porque `.tarjeta h3` es un selector de descendiente. Exige que el elemento sea una etiqueta <h3> y que además se encuentre estrictamente dentro de un contenedor que tenga la clase `.tarjeta`. El <h1> está situado en la cabecera del documento (`<header class="cabecera">`), por lo que no cumple ninguna de las dos condiciones.
+
+3. Supón width: 300px, padding: 20px y borde de 2px por lado: calcula el ancho hasta el borde exterior con content-box y con border-box, sin márgenes.
+------------------------------------------------------------------------
+- Con content-box (Comportamiento por defecto): El ancho total se calcula sumando el ancho del contenido + paddings + bordes.
+  Cálculo: 300px (width) + 20px (izq) + 20px (der) + 2px (izq) + 2px (der) = 344px.
+- Con border-box: El valor de width ya engloba el contenido, el padding y el borde. El tamaño final total se mantiene fiel a lo declarado.
+  Cálculo: 300px totales (el espacio interno para el texto se reduce automáticamente a 256px).
+
+4. Si la raíz tiene 16px, ¿cuántos píxeles son 1.25rem? ¿Coincide con el padding que muestra tu inspector?
+------------------------------------------------------------------------
+El cálculo matemático es 16px * 1.25 = 20px. 
+Sí, coincide exactamente. Al abrir el inspector de elementos del navegador, inspeccionar cualquiera de las tarjetas y acudir a la pestaña "Computed" (Calculado) o al gráfico del modelo de caja, el valor visualizado para el padding es de 20px.
+
+5. Explica por qué Flexbox se aplica a .menu y Grid a .catalogo.
+------------------------------------------------------------------------
+- Flexbox se usa en `.menu` porque está pensado para maquetaciones unidimensionales (una sola fila o columna). Permite que los enlaces fluyan horizontalmente en línea, que tengan anchos variables según sus palabras y que salten de renglón de manera fluida si la pantalla se estrecha.
+- Grid se usa en `.catalogo` porque es un diseño bidimensional (filas y columnas simultáneas). Necesitamos estructurar celdas con proporciones exactas y controladas (columnas simétricas de igual ancho), variando la cantidad de columnas estrictamente según el tamaño de la ventana de visualización.
+
+6. Registra qué ocurrió en los experimentos A, B y C.
+------------------------------------------------------------------------
+- Experimento A (gap de 1rem a 2rem en catálogo): Aumentó notablemente la separación en blanco entre las tarjetas, tanto horizontal como verticalmente. Las proporciones y el tamaño del contenido de las tarjetas no sufrieron cambios.
+- Experimento B (padding de 1.25rem a 2rem en tarjeta): Creció la distancia interna entre el texto y los bordes exteriores de la tarjeta. Debido a esto, el espacio utilizable para el texto se redujo, obligando a las frases a dar más saltos de línea y provocando que las tarjetas se hicieran más altas verticalmente.
+- Experimento C (display de flex a block en menú): Los tres enlaces dejaron de posicionarse uno al lado del otro en horizontal; pasaron a comportarse como elementos de bloque, ocupando todo el ancho disponible y apilándose uno debajo del otro. Además, la propiedad `gap` dejó de funcionar por completo, perdiéndose la separación entre ellos.
+
+7. ¿Cuántas columnas ves a 390, 800 y 1200px? Explica qué reglas actúan a 1200px.
+------------------------------------------------------------------------
+- A 390px se ve 1 columna.
+- A 800px se ven 2 columnas.
+- A 1200px se ven 3 columnas.
+A 1200px actúan las reglas de la segunda Media Query (`@media (min-width: 1000px)`), la cual sobreescribe la estructura inicial del documento aplicando `grid-template-columns: repeat(3, minmax(0, 1fr));`. Dado que 1200px es mayor que 1000px, esta es la instrucción final que interpreta el navegador.
+
+8. Anota un problema encontrado, cómo lo investigaste y su solución.
+------------------------------------------------------------------------
+- Problema: Al probar inicialmente el cambio de tamaño en modo adaptable, las tarjetas no cambiaban a 2 ni a 3 columnas; se quedaban en 1 columna vertical sin importar lo ancha que fuera la pantalla.
+- Investigación: Abrí el inspector de elementos (F12) y verifiqué la hoja de estilos. Noté que había escrito mal la sintaxis de las Media Queries poniendo accidentalmente un punto antes del `min-width` y olvidando cerrar una llave externa.
+- Solución: Corregí la sintaxis en `estilos.css` eliminando el error tipográfico y estructurando los bloques limpios tal como especificaba el material. Al recargar con la consola abierta, los cortes a 700px y 1000px se ejecutaron a la perfección.
