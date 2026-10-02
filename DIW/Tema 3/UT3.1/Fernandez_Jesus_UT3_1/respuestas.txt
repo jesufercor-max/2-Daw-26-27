@@ -1,0 +1,117 @@
+UT3.1 · Práctica de cascada y temas
+Nombre: Jesús Fernández
+Carpeta: Fernandez_Jesus_UT3_1
+
+BLOQUE A · CASOS DE CASCADA
+
+A1. Especificidad
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece rojo.
+Declaración que gana: .aviso { color: red; }.
+Especificidad: .aviso = (0,1,0,0) y p = (0,0,0,1), usando la forma ID-clase-etiqueta.
+Explicación: Ambos selectores coinciden con el párrafo, pero .aviso tiene mayor especificidad que p. Por eso el orden no es suficiente para decidir el resultado.
+
+A2. Empate
+Predicción: El texto será azul.
+Resultado observado: El texto aparece azul.
+Declaración que gana: La segunda regla .aviso { color: blue; }.
+Explicación: Los dos selectores tienen la misma especificidad y la misma importancia. Cuando existe empate, gana la declaración que aparece después en la hoja de estilos.
+Al invertir las reglas:
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece rojo.
+Declaración que gana: La segunda regla .aviso { color: red; }.
+Explicación: Cambiar el orden cambia la declaración ganadora porque los selectores están empatados.
+
+A3. Orden de las clases en HTML
+Con class="aviso destacado":
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece rojo.
+Declaración que gana: .aviso { color: red; }.
+Con class="destacado aviso":
+Predicción: El resultado seguirá siendo rojo.
+Resultado observado: El texto sigue siendo rojo.
+Explicación: El orden de las clases dentro del atributo class del HTML no decide el orden de las reglas CSS. Las dos clases están presentes y los selectores tienen la misma especificidad. En este CSS, .aviso aparece después de .destacado y por eso gana.
+El orden sí importa en el selector cuando se cambia su significado, por ejemplo en A4.
+
+A4. Selector que coincide o no coincide
+Con .aviso .destacado:
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece rojo.
+Explicación: El espacio significa que .destacado debe ser un descendiente de un elemento con clase .aviso. El párrafo tiene las dos clases en el mismo elemento, por lo que el selector .aviso .destacado no coincide.
+Sin espacio, .aviso.destacado:
+Predicción: El texto será morado.
+Resultado observado: El texto aparece morado.
+Declaración que gana: .aviso.destacado { color: purple; }.
+Explicación: Sin espacio, el selector busca un único elemento que tenga las dos clases. Ese párrafo sí coincide. Además, su especificidad es mayor que la de .aviso.
+
+A5. Estilo en línea e importancia
+Con style="color: purple;" y .aviso { color: red; }:
+Predicción: El texto será morado.
+Resultado observado: El texto aparece morado.
+Declaración que gana: La declaración de estilo en línea.
+Explicación: El estilo en línea tiene una prioridad de cascada superior a una declaración normal del autor en una hoja externa.
+Después de cambiar a .aviso { color: red !important; }:
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece rojo.
+Declaración que gana: La declaración con !important.
+Explicación: !important no cambia la especificidad del selector. Cambia la prioridad de la declaración dentro de la cascada. En este caso, una declaración !important del autor puede imponerse al estilo en línea normal.
+El atributo style se elimina antes de A6.
+
+A6. Herencia y declaración directa
+Con #zona { color: red; border: 2px solid black; } y p { color: blue; }:
+Predicción: El h2 será rojo y el p será azul.
+Resultado observado: El h2 aparece rojo y el p azul.
+Declaración que gana en h2: No hay una declaración directa de color para h2, por lo que hereda el color rojo de #zona.
+Declaración que gana en p: p { color: blue; } es una declaración directa y gana frente al valor heredado.
+Borde: El párrafo no recibe un borde propio.
+Explicación: La herencia permite que algunas propiedades pasen del elemento padre a sus descendientes. El borde no se hereda por defecto.
+Después de cambiar a p { color: inherit; }:
+Predicción: El párrafo será rojo.
+Resultado observado: El párrafo aparece rojo.
+Valor aplicado: inherit.
+Explicación: inherit indica expresamente que el párrafo debe utilizar el valor heredado de su elemento padre, #zona. El borde sigue perteneciendo a #zona y no aparece como borde propio del párrafo.
+
+BLOQUE B · TEMAS
+
+B1. ¿Qué hoja es persistente, cuál preferida y cuál alternativa?
+Hoja persistente:
+<link rel="stylesheet" href="css/base.css">
+No tiene title ni alternate stylesheet, por lo que permanece aplicada.
+
+Hoja preferida:
+<link rel="stylesheet" href="css/claro.css" title="Claro">
+Tiene title y es una hoja de estilo preferida.
+
+Hoja alternativa:
+<link rel="alternate stylesheet" href="css/oscuro.css" title="Oscuro">
+Tiene rel="alternate stylesheet" y title="Oscuro", por lo que funciona como alternativa.
+
+B2. ¿Por qué no desaparecen el relleno y los bordes al pasar a Oscuro?
+Porque los estilos comunes de maquetación están en base.css, que permanece activa. El tema claro y el tema oscuro modifican principalmente colores. Al cambiar de tema no se desactiva base.css.
+
+B3. ¿rel="alternate stylesheet" crea por sí solo el selector visible?
+No. El atributo permite definir una hoja de estilos alternativa, pero no crea automáticamente un selector visible en la página. En este proyecto el selector se muestra porque está escrito en el HTML y funciona mediante temas.js.
+
+B4. ¿Qué cambia al elegir un tema y qué contenido se conserva?
+Cambia la hoja de colores activa: se habilita claro.css o oscuro.css. El contenido HTML, la estructura, el espaciado y la maquetación común permanecen porque base.css sigue activa.
+
+B5. ¿Por qué impresion.css se enlaza después de los temas? ¿Participa en la vista normal de pantalla?
+Se enlaza después para que sus reglas de impresión puedan actuar con una posición posterior en la cascada cuando se imprime, si hay declaraciones que compiten. No participa en la presentación normal de pantalla porque el enlace tiene media="print".
+
+B6. Explica el conflicto del paso 9 y cómo se resolvió.
+El conflicto se produce al añadir al final de base.css:
+.tarjeta a { color: red; }
+El selector afecta a los enlaces que están dentro de una tarjeta y tiene una especificidad mayor que el selector simple a de claro.css u oscuro.css. Por eso el enlace toma el color rojo en ambos temas.
+La solución indicada por la práctica es eliminar la regla temporal. No se utiliza !important.
+
+B7. ¿Este proyecto guarda expresamente la preferencia entre visitas?
+No. El JavaScript selecciona el tema durante la visita actual, pero no guarda expresamente la preferencia en localStorage, cookies ni otro sistema de almacenamiento. Si un navegador restaura el estado de una página por sus propios mecanismos, eso es distinto de que el proyecto programe una persistencia de la preferencia.
+
+
+
+Ampliación opcional
+Predicción: El texto será rojo.
+Resultado observado: El texto aparece azul.
+Declaración que gana: @layer componentes {p { color: blue; }}
+Especificidad: componentes tiene prioridad porque se ha declarado después. 
+Explicación: El párrafo dentro de #zona queda azul, aunque la regla roja tenga mayor especificidad. El orden de capas se resuelve antes que la especificidad.
