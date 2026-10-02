@@ -1,0 +1,48 @@
+# Pruebas y validación del proyecto AulaActiva
+
+**Nombre:** Jesús Fernández
+**Temática:** AulaActiva – Actividades educativas
+
+## Registro de pruebas
+
+| Prueba realizada                                           | Resultado | Corrección aplicada                                                                    |
+| ---------------------------------------------------------- | --------- | -------------------------------------------------------------------------------------- |
+| Comprobación del menú de `index.html`                      | Correcto  | El menú permite acceder a Inicio, Actividades y Detalles.                              |
+| Comprobación del menú de `catalogo.html`                   | Correcto  | Se comprobó que los enlaces de navegación funcionan correctamente.                     |
+| Comprobación del menú de `detalle.html`                    | Correcto  | Se comprobó que los enlaces de navegación funcionan correctamente.                     |
+| Comprobación del enlace al detalle de Fotografía           | Correcto  | Se añadió `id="fotografia"` a la sección correspondiente.                              |
+| Comprobación del enlace al detalle de Cocina               | Correcto  | Se añadió `id="cocina"` a la sección correspondiente.                                  |
+| Comprobación del enlace al detalle de Dibujo               | Correcto  | Se añadió `id="dibujo"` a la sección correspondiente.                                  |
+| Recorrido de las páginas mediante teclado                  | Correcto  | Se comprobó que se puede recorrer los enlaces utilizando la tecla `Tab`.               |
+| Validación de `index.html` mediante W3C Nu Html Checker    | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
+| Validación de `catalogo.html` mediante W3C Nu Html Checker | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
+| Validación de `detalle.html` mediante W3C Nu Html Checker  | Correcto  | Se revisó el documento con el validador HTML y se corrigieron los errores encontrados. |
+
+## Estado final
+
+Las pruebas principales de las tres páginas han sido realizadas. Los enlaces del catálogo hacia cada detalle funcionan mediante sus correspondientes identificadores y los tres documentos HTML han sido comprobados mediante **W3C Nu Html Checker**.
+
+No quedan pruebas pendientes.
+
+
+## Preguntas
+
+### 1. ¿Qué diferencia hay entre `head` y `header`?
+
+La etiqueta `head` contiene información sobre la página que no se muestra directamente al usuario, como el título, la configuración de caracteres o el viewport.
+
+En cambio, `header` forma parte del contenido de la página y sí puede aparecer visualmente. Se suele utilizar para colocar la cabecera, el nombre de la página o el menú de navegación.
+
+### 2. ¿Por qué has usado `article` en las fichas del catálogo?
+
+He utilizado `article` porque cada actividad del catálogo es un contenido independiente. Cada una tiene su propio título, descripción y enlace para ver sus detalles.
+
+Por ejemplo, la actividad de fotografía es una ficha independiente de la actividad de cocina o de dibujo, por lo que `article` es adecuado para separar cada una de ellas.
+
+### 3. Explica las dos partes de `detalle.html#fotografia` usando un enlace de tu proyecto.
+
+El enlace `detalle.html#fotografia` tiene dos partes.
+
+`detalle.html` indica el archivo HTML que queremos abrir. Por otro lado, `#fotografia` indica el lugar concreto dentro de ese archivo al que queremos ir.
+
+En mi proyecto, desde `catalogo.html`, utilizo el enlace `detalle.html#fotografia` para acceder a los detalles de la actividad de fotografía. El navegador abre `detalle.html` y busca el elemento que tiene `id="fotografia"`, llevándonos directamente hasta esa sección.

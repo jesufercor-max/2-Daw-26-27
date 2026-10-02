@@ -1,0 +1,116 @@
+## Imagen de taller.jpg
+
+nombre del archivo: taller.jpg
+autor: Conformación de Equipo
+origen: https://www.google.com/url?sa=t&source=web&rct=j&url=https%3A%2F%2Fdosideas.com%2Fnoticias%2Fmetodologias%2F337-12-consejos-para-hacer-un-buen-taller&ved=0CBcQjRxqFwoTCLDN_s-FlpcDFQAAAAAdAAAAABA4&opi=89978449
+licencia: google
+
+
+## Los seis problemas corregidos
+
+    # Menú principal:
+    <div class="menu"> → <nav class="menu" aria-label="Navegación principal">
+
+    # Contenido principal:
+    <div class="contenido"> → <main>
+
+    # Título:
+    <div class="titulo">Fotografía con móvil</div> → <h1>Fotografía con móvil</h1>
+
+    # Enlace de solicitud:
+    href="#inscripcion" → href="#solicitud" porque la sección existente tiene id="solicitud".
+
+    # Etiqueta del correo:
+    for="email" → for="correo", coincidiendo con id="correo" del campo.
+
+    # Imagen:
+    Se añade alt="Taller de fotografía con móvil" para proporcionar una alternativa textual.
+
+## Explicación de los problemas, correción y el porque mejora la página: 
+
+# Problema: El menú estaba dentro de un elemento div genérico.
+# Cambio realizado: He sustituido el div por un elemento nav y he añadido aria-label="Navegación principal".
+# Por qué mejora la página: nav identifica semánticamente que ese contenido es una zona de navegación y facilita su comprensión por navegadores y tecnologías de asistencia.
+
+# Problema: El contenido principal estaba dentro de un div genérico.
+# Cambio realizado: He sustituido el div con class="contenido" por el elemento main.
+# Por qué mejora la página: main identifica el contenido principal de la página y aporta una estructura semántica más clara.
+
+# Problema: "Fotografía con móvil" estaba marcado como un div.
+# Cambio realizado: He sustituido el div por un elemento h1.
+# Por qué mejora la página: h1 identifica el encabezado principal de la página y describe mejor la jerarquía del contenido.
+
+# Problema: El enlace "Solicitar plaza" apuntaba a #inscripcion, pero no existía ningún elemento con ese id.
+# Cambio realizado: He cambiado href="#inscripcion" por href="#solicitud".
+# Por qué mejora la página: el enlace ahora conduce a la sección existente que contiene el formulario.
+
+# Problema: El atributo for del label no coincidía con el id del campo.
+# Cambio realizado: He cambiado for="email" por for="correo", que coincide con id="correo".
+# Por qué mejora la página: el texto de la etiqueta queda asociado correctamente al campo y al pulsarlo se puede activar el control.
+
+# Problema: La imagen no tenía una alternativa textual.
+# Cambio realizado: He añadido alt="Taller de fotografía con móvil".
+# Por qué mejora la página: proporciona una descripción alternativa de la imagen para las personas que no pueden verla.
+
+
+## Comprobación de errores conHTML corregido:
+
+# • Pulsa «Solicitar plaza» y observa el fragmento de la URL.
+Al pulsar te muestra la siguiente Url: http://127.0.0.1:5500/DIW/Tema2/UT2.3/index.html#solicitud
+
+
+# • Pulsa el label del correo y comprueba el foco.
+Funciona perfectamente.
+
+# • Recorre los enlaces y el formulario con Tab.
+Funciona perfectamente.
+
+# • Intenta enviar el campo vacío, después «hola» y después ana@example.com.
+Al enviar el "campo vacío" aparace un mensaje de "Rellene este campo".
+Al enviar el "hola" aparace un mensaje de "Intoduzca una dirección de correo".
+Al enviar el "ana@example.com" se envía.
+
+# • Revisa el marcado en https://validator.w3.org/nu/.
+No da fallos y nos dice lo siguiente "Document checking completed. No errors or warnings to show."
+
+## Preguntas punto 3:
+
+# A. ¿Por qué un div no explica por sí mismo que contiene el menú?
+
+Un div es un contenedor genérico y no indica qué función tiene su contenido. El elemento nav sí tiene un significado semántico que indica que contiene una zona de navegación.
+
+# B. ¿Qué diferencia hay entre title y h1 en esta página?
+
+El elemento title indica el título de la página en el navegador y en otros contextos, mientras que h1 es el encabezado principal que forma parte del contenido visible de la página. En este caso, title contiene "AulaActiva | Fotografía" y h1 contiene "Fotografía con móvil".
+
+# C. ¿Qué relación hay entre for e id? ¿Para qué sirve name?
+
+El atributo for del label debe coincidir con el id del campo al que pertenece. Así se establece la asociación entre la etiqueta y el control. El atributo name identifica el dato que se enviará cuando se envía el formulario.
+
+# D. ¿Puede CSS arreglar por sí solo un enlace cuyo destino no existe?
+
+No. CSS solo modifica la presentación visual. Para corregir un enlace cuyo destino no existe hay que modificar el HTML, haciendo que href coincida con el id de la sección de destino.
+
+# E. ¿Un formulario válido confirma una inscripción real? Explica la respuesta.
+
+No. El formulario de esta actividad solo sirve como demostración. La validación comprueba que los datos introducidos cumplen determinadas condiciones, pero no significa que exista una inscripción real. Además, el formulario utiliza method="get" y no está conectado a un sistema que gestione reservas.
+
+
+## F. Describe cuatro cambios visibles y la propiedad CSS responsable.
+
+El fondo de la página cambia a un color gris claro mediante background-color en body.
+
+El contenido principal aparece sobre un fondo blanco mediante background-color en main.
+
+El contenido principal tiene un ancho máximo y queda centrado mediante max-width y margin en main.
+
+Las secciones aparecen delimitadas por un borde y tienen espacio interior mediante border y padding en section.
+
+## G. Explica qué se conserva al aplicar CSS y cómo lo has comprobado.
+
+Al aplicar CSS se conserva la información y la estructura HTML de la página. No cambian los textos, los enlaces, las secciones ni el formulario. Lo he comprobado comparando la página sin CSS con la página con CSS y comprobando que los enlaces y el formulario siguen funcionando.
+
+## H. Indica qué selector y propiedades cambiaste tú.
+
+He modificado el selector h1. He cambiado la propiedad color a #7a284b y la propiedad font-size a 36px.
+
