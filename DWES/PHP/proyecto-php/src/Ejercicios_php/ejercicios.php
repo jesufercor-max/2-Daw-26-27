@@ -28,11 +28,7 @@ HTML como PHP. -->
 traducción al castellano. Las palabras deben estar distribuidas en dos columnas. Utiliza la etiqueta
 <table> de HTML. -->
 
-<table border="1">
-    <tr <?php echo <b>,"Palabra",</b> ?>
-        <th>
-    </tr>
-</table>
+
 
     <!-- Ejercicio 4: Escribe un programa que muestre tu horario de clase mediante una tabla. Aunque se puede hacer
 íntegramente en HTML (igual que los ejercicios anteriores), ve intercalando código HTML y PHP para
