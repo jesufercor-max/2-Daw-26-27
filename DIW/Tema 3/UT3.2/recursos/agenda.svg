@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="300" viewBox="0 0 900 300">
+<title>Agenda de actividades</title>
+<rect width="900" height="300" fill="#dbece6"/>
+<rect x="35" y="25" width="830" height="250" rx="16" fill="#fff"/>
+<path d="M70 58H400" stroke="#243442" stroke-width="12" stroke-linecap="round"/>
+<rect x="70" y="90" width="235" height="60" rx="8" fill="#126857"/>
+<rect x="335" y="90" width="235" height="60" rx="8" fill="#b45309"/>
+<rect x="600" y="90" width="235" height="60" rx="8" fill="#315c94"/>
+<rect x="70" y="175" width="235" height="60" rx="8" fill="#126857"/>
+<rect x="335" y="175" width="235" height="60" rx="8" fill="#b45309"/>
+<rect x="600" y="175" width="235" height="60" rx="8" fill="#315c94"/>
+</svg>
