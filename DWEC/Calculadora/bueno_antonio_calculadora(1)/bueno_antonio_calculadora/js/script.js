@@ -1,92 +1,105 @@
-const pantalla = document.getElementById('pantalla');
-let entradaActual = '';
-let reiniciarSiguiente = false;
+// Seleccionamos la pantalla de la calculadora
+const elementoPantalla = document.getElementById('pantalla');
 
-document.querySelectorAll('.boton').forEach(boton => {
+// Variables para guardar los datos de la calculadora
+let textoActual = '';
+let limpiarAlEscribir = false;
 
-    boton.addEventListener('click', () => {
-    const valor = boton.dataset.valor;
-    const accion = boton.dataset.accion;
+// Seleccionamos todos los botones que tienen la clase css
+const listaBotones = document.getElementsByClassName('boton');
 
-    if (accion) {
-      manejarAccion(accion);
-    } else if (valor !== undefined) {
-      if (reiniciarSiguiente) {
-        entradaActual = '';
-        reiniciarSiguiente = false;
+// Recorremos los botones con un bucle for 
+for (let i = 0; i < listaBotones.length; i++) {
+  const botonIndividual = listaBotones[i];
+
+  // 1. EVENTO CLICK: Detectar qué botón se pulsa
+  botonIndividual.addEventListener('click', function() {
+    const valorBoton = botonIndividual.getAttribute('data-valor');
+    const accionBoton = botonIndividual.getAttribute('data-accion');
+
+    // Si el botón tiene una acción asignada (borrar, calcular, etc.)
+    if (accionBoton) {
+      ejecutarOperacion(accionBoton);
+    } 
+    // Si es un número o un operador (+, -, *, /)
+    else if (valorBoton !== null) {
+      if (limpiarAlEscribir) {
+        textoActual = '';
+        limpiarAlEscribir = false;
       }
-      entradaActual += valor;
-      actualizarPantalla();
+      textoActual = textoActual + valorBoton;
+      elementoPantalla.value = textoActual;
     }
   });
 
-  boton.addEventListener('mouseenter', () => {
-    const valor = boton.dataset.valor;
-    const accion = boton.dataset.accion;
+  // 2. EVENTO MOUSEENTER: Cambiar colores al pasar el ratón por encima
+  botonIndividual.addEventListener('mouseenter', function() {
+    const valorBoton = botonIndividual.getAttribute('data-valor');
+    const accionBoton = botonIndividual.getAttribute('data-accion');
 
-    if (accion || boton.classList.contains('operador')) {
-      boton.style.backgroundColor = 'yellow';
-    } else if (!isNaN(valor)) {
-      const numero = parseInt(valor);
-      if (numero % 2 === 0) {
-        boton.style.backgroundColor = 'red';
+    // Si es una acción o tiene la clase operador, se pinta de amarillo
+    if (accionBoton || botonIndividual.classList.contains('operador')) {
+      botonIndividual.style.backgroundColor = 'yellow';
+    } 
+    // Si es un número, comprobamos si es par o impar
+    else if (valorBoton && !isNaN(valorBoton)) {
+      const numeroConvertido = Number(valorBoton);
+      if (numeroConvertido % 2 === 0) {
+        botonIndividual.style.backgroundColor = 'red'; // Par -> Rojo
       } else {
-        boton.style.backgroundColor = 'green';
+        botonIndividual.style.backgroundColor = 'green'; // Impar -> Verde
       }
     }
   });
 
-  boton.addEventListener('mouseleave', () => {
-    if (boton.classList.contains('igual')) {
-      boton.style.backgroundColor = '#4caf50';
+  // 3. EVENTO MOUSELEAVE: Restaurar el color original al quitar el ratón
+  botonIndividual.addEventListener('mouseleave', function() {
+    if (botonIndividual.classList.contains('igual')) {
+      botonIndividual.style.backgroundColor = '#4caf50'; // Color verde original del botón igual
+    } else if (botonIndividual.classList.contains('borrar')) {
+      botonIndividual.style.backgroundColor = '#FF0000'; // Color rojo para el botón C (borrar)
     } else {
-      boton.style.backgroundColor = '#e0e0e0';
+      botonIndividual.style.backgroundColor = '#e0e0e0'; // Color gris por defecto
     }
   });
-});
-
-function manejarAccion(accion) {
-  switch (accion) {
-    case 'borrar':
-      entradaActual = '';
-      break;
-    case 'calcular':
-      try {
-        entradaActual = eval(entradaActual).toString();
-      } catch {
-        entradaActual = 'Error';
-      }
-      reiniciarSiguiente = true;
-      break;
-    case 'raiz':
-      try {
-        entradaActual = Math.sqrt(eval(entradaActual)).toString();
-      } catch {
-        entradaActual = 'Error';
-      }
-      reiniciarSiguiente = true;
-      break;
-    case 'porcentaje':
-      try {
-        entradaActual = (eval(entradaActual) / 100).toString();
-      } catch {
-        entradaActual = 'Error';
-      }
-      reiniciarSiguiente = true;
-      break;
-    case 'cambiar-signo':
-      if (entradaActual) {
-        if (entradaActual.startsWith('-')) {
-          entradaActual = entradaActual.substring(1);
-        } else {
-          entradaActual = '-' + entradaActual;
-        }
-      }
-      break;
-  }
-  actualizarPantalla();
 }
 
-function actualizarPantalla() {
-  pantalla.value = entradaActual;
+// Función secundaria para procesar las operaciones matemáticas
+function ejecutarOperacion(accionMatematica) {
+  // Ponemos un bloque try-catch para capturar fallos lógicos (por ejemplo, si escriben "++")
+  try {
+    if (accionMatematica === 'borrar') {
+      textoActual = '';
+    } 
+    else if (accionMatematica === 'calcular') {
+      // Truco limpio de documentación para evitar el uso del peligroso eval()
+      textoActual = String(new Function('return ' + textoActual)());
+      limpiarAlEscribir = true;
+    } 
+    else if (accionMatematica === 'raiz') {
+      const operacionEvaluada = new Function('return ' + textoActual)();
+      textoActual = String(Math.sqrt(operacionEvaluada));
+      limpiarAlEscribir = true;
+    } 
+    else if (accionMatematica === 'porcentaje') {
+      const operacionEvaluada = new Function('return ' + textoActual)();
+      textoActual = String(operacionEvaluada / 100);
+      limpiarAlEscribir = true;
+    } 
+    else if (accionMatematica === 'cambiar-signo') {
+      if (textoActual) {
+        if (textoActual.indexOf('-') === 0) {
+          textoActual = textoActual.substring(1); // Quitamos el signo menos si ya lo tiene
+        } else {
+          textoActual = '-' + textoActual; // Le añadimos el signo menos delante
+        }
+      }
+    }
+  } catch (errorOperacion) {
+    textoActual = 'Error';
+    limpiarAlEscribir = true;
+  }
+
+  // Actualizamos la pantalla con el resultado final de la operación
+  elementoPantalla.value = textoActual;
 }
