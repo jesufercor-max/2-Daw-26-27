@@ -1,0 +1,8 @@
+FITHOME · HITO 2 · UT3
+
+1. Abre index.html con Firefox o cualquier navegador moderno.
+2. Usa la navegación para visitar Ejercicios y Laboratorio.
+3. Las hojas CSS son locales; no hay frameworks ni dependencias externas obligatorias.
+4. Para comparar los temas alternativos, sigue el apartado RA2.d de evidencias/informe.md.
+5. Las capturas y la validación deben realizarlas y registrarlas antes de entregar; no se incluyen resultados inventados.
+6. Sustituye Apellido_Nombre en el nombre de la carpeta/ZIP y los datos del informe por tus datos reales antes de entregar.
