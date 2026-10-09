@@ -1,0 +1,107 @@
+/* UT3.2 · Archivo inicial con errores de distribución intencionados.
+   Corrige este archivo siguiendo el enunciado. Conserva los contenidos.
+   Almudena Marchena Gómez · IES Polígono Sur */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  color: #243442;
+  background: #f4f7f8;
+}
+
+a { 
+    color: #075e56; 
+}
+
+a:focus-visible {
+  outline: 3px solid #b45309;
+  outline-offset: 3px;
+}
+
+* { box-sizing: border-box; }
+.contenedor {
+    width: calc(100% - 2rem);
+    max-width: 1120px;
+    margin-inline: auto;
+}
+
+.cabecera {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+
+.marca { 
+    font-weight: bold; 
+}
+
+.menu {
+  display: flex;
+  flex-wrap:wrap;
+  gap: .75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.menu a { 
+    white-space: nowrap; 
+}
+
+h1 { 
+    font-size: 2rem; 
+}
+
+section { 
+    margin-block: 2rem; 
+}
+
+.imagen {
+   max-width: 100%;
+   width: 100%; 
+   height: auto;
+}
+
+.tarjetas { 
+    display: grid; 
+    box-sizing: border-box;
+    min-width: 0;
+    gap: 1rem;
+    grid-template-columns: minmax(0, 1fr); 
+}
+
+@media (min-width: 600px) {
+    .tarjetas { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+/* Completa la consulta de 1000px con tres columnas. */
+@media (min-width: 1000px) {
+    .tarjetas { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+.tarjeta {
+  padding: 20px;
+  border: 2px solid #9cbbb2;
+  border-radius: .5rem;
+  background: white;
+}
+
+.tarjeta h3 { 
+    margin-top: 0; 
+}
+
+.codigo {
+  overflow-wrap: anywhere;
+  padding: 1rem;
+  border: 1px solid #9cbbb2;
+  background: #e4eeeb;
+  font-family: monospace;
+}
+
+footer {
+  margin-top: 2rem;
+  padding-block: 1rem;
+  border-top: 2px solid #9cbbb2;
+}
