@@ -108,17 +108,47 @@ multiplicación. -->
 
     <!-- Ejercicio 6 : Crea la variable $nombre y asígnale tu nombre completo. Muestra su valor por pantalla de tal forma
 que el resultado sea el mismo que el del ejercicio 1. -->
-
+<h2> Ejercicio 6 </h1>
+<?php
+    $nombre = "Jesus Fernandez ";
+    echo "Buenas tardes " , $nombre;
+?>
 
     <!-- Ejercicio 7: Crea las variables $nombre, $direccion y $telefono y asígnales los valores adecuados. Muestra
 los valores por pantalla de tal forma que el resultado sea el mismo que el del ejercicio 2. -->
+<h2> Ejercicio 7 </h1>
+<?php
+    $nombre = "Carlos Dominguez"; 
+    $direccion = "Calle de la rosa 34";
+    $telefono = "601555001";
+    echo "Mi nombre es: ", $nombre, "<br>";
+    echo "Mi dirección es: ", $direccion, "<br>";
+    echo "Mi numero es: <b>", $telefono, "</b>";
+?>
 
     <!-- Ejercicio 8: Realiza un conversor de euros a pesetas. La cantidad en euros que se quiere convertir deberá estar
 almacenada en una variable. -->
+<h2> Ejercicio 8</h1>
+<form method="get">
+    Introduce la cantidad a convertir en €
+    <input type="number" id="euros" name="euros" required>
+    <button type="submit">Enviar</button>
+</form>
 
+<?php
+    function conversorEurosApesetas($euros){
+        return $euros * 166.386;
+    }
+
+    if (isset($_GET['euros'])){
+        $euros = $_GET['euros'];
+        echo conversorEurosApesetas($euros);
+    }
+?>
 
     <!-- Ejercicio 9: Realiza un conversor de pesetas a euros. La cantidad en pesetas que se quiere convertir deberá estar
 almacenada en una variable. -->
+<h2> Ejercicio 9</h1>
 
 
     <!-- Ejercicio 10: Escribe un programa que pinte por pantalla una pirámide rellena a base de asteriscos. La base de la 
