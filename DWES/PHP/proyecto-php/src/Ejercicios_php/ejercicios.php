@@ -8,7 +8,8 @@
 </head>
 
 <body>
-    <!-- Ejercicio 1: Escribe un programa que muestre tu nombre por pantalla. Utiliza código PHP. -->
+<!-- Ejercicio 1: Escribe un programa que muestre tu nombre por pantalla. Utiliza código PHP. -->
+<h2> Ejercicio 1</h1>
     <?php
     $nombre = "Jesus Fernández";
     echo "Buenas tardes ", $nombre;
@@ -17,6 +18,7 @@
     <!-- Ejercicio 2: Modifica el programa anterior para que muestre tu dirección y tu número de teléfono. Cada dato se
 debe mostrar en una línea diferente. Mezcla de alguna forma las salidas por pantalla, utilizando tanto
 HTML como PHP. -->
+<h2> Ejercicio 2</h1>
     <?php
     $direccion = "Calle Federico";
     $telefono = "12323434324";
@@ -27,7 +29,7 @@ HTML como PHP. -->
     <!-- Ejercicio 3: Escribe un programa que muestre por pantalla 10 palabras en inglés junto a su correspondiente
 traducción al castellano. Las palabras deben estar distribuidas en dos columnas. Utiliza la etiqueta
 <table> de HTML. -->
-
+<h2> Ejercicio 3 </h1>
 <table border=1rm>
     <thead>
         <tr>
@@ -53,7 +55,7 @@ traducción al castellano. Las palabras deben estar distribuidas en dos columnas
     <!-- Ejercicio 4: Escribe un programa que muestre tu horario de clase mediante una tabla. Aunque se puede hacer
 íntegramente en HTML (igual que los ejercicios anteriores), ve intercalando código HTML y PHP para
 familiarizarte con éste último. -->
-
+<h2> Ejercicio 4 </h1>
 <table border=1rm>
     <thead>
         <tr>
@@ -89,7 +91,7 @@ familiarizarte con éste último. -->
     <!-- Ejercicio 5: Escribe un programa que utilice las variables $x y $y. Asignales los valores 144 y 999 respectivamente.
 A continuación, muestra por pantalla el valor de cada variable, la suma, la resta, la división y la
 multiplicación. -->
-
+<h2> Ejercicio 5 </h1>
 <?php
     $variableX = 144;
     $variableY = 999;
