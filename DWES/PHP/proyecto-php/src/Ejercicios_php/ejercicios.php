@@ -149,15 +149,110 @@ almacenada en una variable. -->
     <!-- Ejercicio 9: Realiza un conversor de pesetas a euros. La cantidad en pesetas que se quiere convertir deberá estar
 almacenada en una variable. -->
 <h2> Ejercicio 9</h1>
+<form method="get">
+    Introduce la cantidad en pesetas que quieres converti a €:
+    <input type="number" name="pesetas" required>
+    <button type="submit">Convertir</button>
+</form>
 
+<?php
+    function conversorPesetasAeuros($pesetas){
+        return $pesetas / 166.386;
+    }
+
+    if (isset($_GET['pesetas'])){
+        $pesetas = $_GET['pesetas'];
+        echo conversorPesetasAeuros($pesetas);
+    }
+?>
 
     <!-- Ejercicio 10: Escribe un programa que pinte por pantalla una pirámide rellena a base de asteriscos. La base de la 
 pirámide debe estar formada por 9 asteriscos. -->
+<h2> Ejercicio 10</h1>
+<form method="get">
+    Introduce la altura de tu triangulo:
+    <input type = "number" name="n" required>
+    <button type="submit">Convertir</button>
+</form>
+<?php
+        
+    if (isset($_GET['n'])) {
+        $altura = (int)$_GET['n'];
+        
+        if ($altura < 0) {
+            $altura = $altura * -1;
+        }
 
+        if ($altura > 0) {
+            // La etiqueta <pre> hace que el navegador respete los espacios en blanco " "
+            echo "<pre style='font-family: monospace; line-height: 1;'>";
+
+            for ($i = 1; $i <= $altura; $i++) {
+
+                // 1. IMPRIMIR ESPACIOS TRADICIONALES (Altura - Fila actual)
+                for ($j = 1; $j <= ($altura - $i); $j++) {
+                    echo " "; 
+                }
+
+                // 2. IMPRIMIR LOS ASTERISCOS
+                for ($k = 1; $k <= (2 * $i - 1); $k++) {
+                    echo "*";
+                }
+
+                // 3. SALTO DE LÍNEA ESTÁNDAR
+                echo "\n";
+            }
+
+            echo "</pre>";
+        }
+    }
+?>
 
     <!-- Ejercicio 11: Igual que el programa anterior, pero esta vez la pirámide estará hueca (se debe ver únicamente el
 contorno hecho con asteriscos). -->
+<h2> Ejercicio 11</h1>
+<form method="get">
+    Introduce la altura de tu triangulo:
+    <input type = "number" name="n" required>
+    <button type="submit">Convertir</button>
+</form>
+<?php
+        
+    if (isset($_GET['n'])) {
+        $altura = (int)$_GET['n'];
+        
+        if ($altura < 0) {
+            $altura = $altura * -1;
+        }
 
+        if ($altura > 0) {
+            // La etiqueta <pre> hace que el navegador respete los espacios en blanco " "
+            echo "<pre style='font-family: monospace; line-height: 1;'>";
+
+            for ($i = 1; $i <= $altura; $i++) {
+
+                // 1. IMPRIMIR ESPACIOS TRADICIONALES (Altura - Fila actual)
+                for ($j = 1; $j <= ($altura - $i); $j++) {
+                    echo " "; 
+                }
+
+                // 2. IMPRIMIR LOS ASTERISCOS
+                for ($k = 1; $k <= (2 * $i - 1); $k++) {
+                    if ($k==1 || $k==(2 * $i - 1) || $k==$altura){
+                        echo "*";
+                    } else {
+                        echo " ";
+                    }
+                }
+
+                // 3. SALTO DE LÍNEA ESTÁNDAR
+                echo "\n";
+            }
+
+            echo "</pre>";
+        }
+    }
+?>
 
     <!-- Ejercicio 12 : Igual que el programa anterior, pero esta vez la pirámide debe aparecer invertida, con el vértice hacia
 abajo. -->
