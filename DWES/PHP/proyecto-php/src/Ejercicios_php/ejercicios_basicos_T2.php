@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ejercicios PHP</title>
+    <title>Ejercicios básicos PHP</title>
 </head>
 
 <body>
@@ -238,7 +238,7 @@ contorno hecho con asteriscos). -->
 
                 // 2. IMPRIMIR LOS ASTERISCOS
                 for ($k = 1; $k <= (2 * $i - 1); $k++) {
-                    if ($k==1 || $k==(2 * $i - 1) || $k==$altura){
+                    if ($k==1 || $k==(2 * $i - 1) || $i==$altura){
                         echo "*";
                     } else {
                         echo " ";
@@ -256,6 +256,49 @@ contorno hecho con asteriscos). -->
 
     <!-- Ejercicio 12 : Igual que el programa anterior, pero esta vez la pirámide debe aparecer invertida, con el vértice hacia
 abajo. -->
+<h2> Ejercicio 12</h1>
+<form method="get">
+    Introduce la altura de tu triangulo:
+    <input type = "number" name="n" required>
+    <button type="submit">Convertir</button>
+</form>
+<?php
+        
+    if (isset($_GET['n'])) {
+        $altura = (int)$_GET['n'];
+        
+        if ($altura < 0) {
+            $altura = $altura * -1;
+        }
+
+        if ($altura > 0) {
+            // La etiqueta <pre> hace que el navegador respete los espacios en blanco " "
+            echo "<pre style='font-family: monospace; line-height: 1;'>";
+
+            for ($i = $altura; $i >=1 ; $i--){
+
+                // 1. IMPRIMIR ESPACIOS TRADICIONALES (Altura - Fila actual)
+                for ($j = 1; $j <= ($altura - $i); $j++) {
+                    echo " "; 
+                }
+
+                // 2. IMPRIMIR LOS ASTERISCOS
+                for ($k = 1; $k <= (2 * $i - 1); $k++) {
+                    if ($k==1 || $k==(2 * $i - 1) || $i==$altura){
+                        echo "*";
+                    } else {
+                        echo " ";
+                    }
+                }
+
+                // 3. SALTO DE LÍNEA ESTÁNDAR
+                echo "\n";
+            }
+
+            echo "</pre>";
+        }
+    }
+?>
 
 </body>
 
