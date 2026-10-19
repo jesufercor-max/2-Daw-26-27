@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Cuenta Bancaria</title>
+    <!-- Cargamos el script con 'defer' para asegurarnos de que el HTML exista antes de buscarlo en JS -->
+    <script src="GestionCuentaBancaria.js" defer></script>
+    <style>
+        body { font-family: Arial, sans-serif; max-width: 500px; margin: 30px auto; padding: 20px; border: 1px solid #ccc; border-radius: 8px; }
+        .panel { background-color: #f4f4f9; padding: 15px; border-radius: 5px; margin-bottom: 20px; }
+        .controles { margin-bottom: 15px; }
+        input { padding: 8px; width: 150px; margin-right: 10px; }
+        button { padding: 8px 15px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 4px; }
+        button:hover { background-color: #0056b3; }
+        .error { color: red; font-weight: bold; margin-top: 10px; }
+        .exito { color: green; font-weight: bold; margin-top: 10px; }
+        ul { background: #eee; padding: 15px 30px; border-radius: 4px; list-style-type: square; }
+    </style>
+</head>
+<body>
+
+    <h2>🏦 Mi Cuenta Bancaria</h2>
+    
+    <div class="panel">
+        <h3 id="vistaTitular">Titular: Cargando...</h3>
+        <h4 id="vistaSaldo">Saldo disponible: $0</h4>
+    </div>
+
+    <div class="controles">
+        <input type="number" id="inputMonto" placeholder="Monto $" min="1">
+        <button id="btnDepositar">Depositar</button>
+        <button id="btnRetirar">Retirar</button>
+    </div>
+
+    <!-- Mensajes de feedback del sistema -->
+    <p id="mensajeSistema"></p>
+
+    <h3>📜 Historial de Transacciones</h3>
+    <ul id="listaHistorial">
+        <li>No hay movimientos aún.</li>
+    </ul>
+
+</body>
+</html>
