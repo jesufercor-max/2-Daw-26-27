@@ -1,34 +1,84 @@
-<!-- Ejercicio 1
-Escribe un programa que calcule la media de un conjunto de números positivos introducidos por teclado. A
-priori, el programa no sabe cuántos números se introducirán. El usuario indicará que ha terminado de introducir
-los datos cuando meta un número negativo. Utiliza sesiones.-->
-<?php session_start(); // Inicio de sesión
-    if(isset($_GET['numero'])) {
-        $num = $_GET['numero'];
-
-        if ($num>0) {
-            $_SESSION['numeros'] [] = $num;
-        } else {
-            $total = count($_SESSION['numeros']);
-            if ($total > 0) {
-            $media = array_sum($_SESSION['numeros']) / $total;
-            echo "<h3>La media es: " . round($media, 2) . "</h3>";
-        } else {
-            echo "<h3>No introdujiste ningún número positivo.</h3>";
-        }
-        
-        $_SESSION['numeros'] = []; // Vaciar la sesión para empezar de nuevo
-        
-        }
-    }
-
+<?php session_start();
 ?>
+   
 <h2> Ejercicio 1</h1>
 <form method="get">
     <label>Introduce un número (negativo para terminar):</label>
     <input type="number" step="any" name="numero" required autofocus>
     <input type="submit" value="Enviar">
 </form>
+<?php
+    if (!isset($_SESSION['suma'])) {
+
+        //Para que no de el error de Undefined
+        $_SESSION['suma'] = 0;
+        $_SESSION['contador'] = 0;
+    }    
+    
+    $mostrar_resultado = false;
+    
+    if (isset($_GET["numero"]) && $_GET["numero"] !== "") {
+        $numeros = (int)$_GET["numero"];
+        
+        if ($numeros>0) {
+            $_SESSION["contador"]++;
+            $_SESSION["suma"]+=$numeros; 
+        
+        } elseif ($_SESSION["contador"]>0){
+            $media = $_SESSION["suma"] / $_SESSION["contador"];
+            echo "La media de los números es: " , "<b>" , $media , "</b>"; 
+        }    
+        
+        $mostrar_resultado= true;
+
+    }
+?>
+
+<h1>Ejercicio 2 </h1>
+<form method="get">
+    Introduce un número (negativo para terminar): 
+    <input type="number" name="numeros" required>
+    <input type="submit" value="Enviar">
+</form>
+
+<?php
+    if (!isset($_SESSION["suma"])){
+        $_SESSION["suma"] = 0;
+        $_SESSION["contador"] = 0;
+        $_SESSION["lista_pares"] = [];
+    }
+
+    $mostrar_resultado= false;
+
+    if (isset($_GET["numeros"]) && $_GET["numeros"] !== "" ){
+        $numeros = (int)$_GET["numeros"];
+
+        if ($numeros>0 && $numeros%2!==0) {
+            $_SESSION["contador"]++;
+            $_SESSION["suma"]+= $numeros;
+
+        } elseif ($numeros>0 && $numeros%2==0) {
+            $_SESSION["lista_pares"] []= $numeros;
+            $mayor = max($_SESSION["lista_pares"]);
+
+        } elseif ($_SESSION["contador"]>0) {
+            $media_impares = $_SESSION["suma"] / $_SESSION["contador"];
+            echo "La media de los números impares es: " , "<b>" , $media_impares , "</b>"; 
+
+            if (!empty($_SESSION["lista_pares"])) {
+                $mayor = max($_SESSION["lista_pares"]);
+                echo "El mayor de los pares es: " , "<b>" , $mayor , "</b>";
+            } else {
+                echo "No se introdujeron números pares.";
+            }
+
+        }
+
+        $mostrar_resultado = true;
+
+    }
+
+?>
 <!-- Ejercicio 2
 Realiza un programa que vaya pidiendo números hasta que se introduzca un numero negativo y nos diga
 cuantos números se han introducido, la media de los impares y el mayor de los pares. El número negativo sólo
