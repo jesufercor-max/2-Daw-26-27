@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FitHome: ejercicios guiados para entrenar en casa">
+    <title>Inicio · FitHome</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tema-claro.css" title="Claro">
+    <link rel="alternate stylesheet" href="css/tema-oscuro.css" title="Oscuro">
+</head>
+
+<body>
+    <header class="cabecera"><a class="marca" href="index.html"><span class="logo">ϟ</span> FitHome</a>
+        <nav class="navegacion" aria-label="Principal"><a href="index.html" aria-current="page">Inicio</a><a
+                href="detalle.html">Ejercicios</a><a href="index.html#categorias">Categorías</a></nav>
+        <div class="cabecera-derecha"><span class="racha">♧ 3 días</span><span class="avatar" aria-hidden="true"></span>
+        </div>
+    </header>
+    <main class="contenedor">
+        <section class="hero">
+            <div class="hero-texto"><span class="etiqueta">MUÉVETE A TU RITMO</span>
+                <h1>Entrena bien. <em>Siéntete mejor.</em></h1>
+                <p>Ejercicios sencillos y guiados para ganar fuerza desde casa.</p>
+            </div><img src="recursos/imagenes/hero.png" alt="Dos personas entrenando en casa">
+        </section>
+        <section class="filtros" id="categorias">
+            <div class="busqueda"><label for="buscar">¿Qué quieres entrenar hoy?</label><input id="buscar" type="search"
+                    placeholder="⌕  Brazos posteriores" aria-label="Buscar ejercicios"></div>
+            <div class="categorias">
+                <h2>CATEGORÍAS</h2>
+                <div class="chips"><a class="chip seleccionado" href="#ejercicios">✦ Piernas</a><a class="chip"
+                        href="#ejercicios">♧ Brazos</a><a class="chip" href="#ejercicios">◉ Abdomen</a><a class="chip"
+                        href="#ejercicios">♡ Cardio</a></div>
+            </div>
+        </section>
+        <section id="ejercicios" class="seccion">
+            <div class="titulo-fila">
+                <div>
+                    <h2>Ejercicios populares</h2>
+                    <p>Rutinas claras, sin equipamiento complicado.</p>
+                </div><a class="enlace" href="#catalogo">Ver todos →</a>
+            </div>
+            <div class="rejilla" id="catalogo">
+                <article class="tarjeta destacada"><a href="detalle.html" aria-label="Ver Sentadillas"><img
+                            src="recursos/imagenes/sentadillas.png" alt="Demostración de sentadillas"
+                            loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Sentadillas</h3>
+                        <p>Fácil · 10 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+                <article class="tarjeta "><a href="detalle.html" aria-label="Ver Flexiones"><img
+                            src="recursos/imagenes/flexiones.png" alt="Demostración de flexiones" loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Flexiones</h3>
+                        <p>Medio · 10 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+                <article class="tarjeta "><a href="detalle.html" aria-label="Ver Plancha"><img
+                            src="recursos/imagenes/plancha.png" alt="Demostración de plancha" loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Plancha</h3>
+                        <p>Fácil · 5 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+                <article class="tarjeta "><a href="detalle.html" aria-label="Ver Zancadas"><img
+                            src="recursos/imagenes/hero.png" alt="Demostración de zancadas" loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Zancadas</h3>
+                        <p>Fácil · 12 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+                <article class="tarjeta "><a href="detalle.html" aria-label="Ver Sentadilla isométrica"><img
+                            src="recursos/imagenes/sentadillas-detalle.png" alt="Demostración de sentadilla isométrica"
+                            loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Sentadilla isométrica</h3>
+                        <p>Medio · 8 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+                <article class="tarjeta "><a href="detalle.html" aria-label="Ver Plancha lateral"><img
+                            src="recursos/imagenes/plancha.png" alt="Demostración de plancha lateral"
+                            loading="lazy"></a>
+                    <div class="tarjeta-contenido">
+                        <h3>Plancha lateral</h3>
+                        <p>Medio · 6 min</p><a class="enlace" href="detalle.html">Ver ejercicio ↗</a>
+                    </div>
+                </article>
+            </div>
+        </section>
+        <section class="contacto" id="contacto">
+            <div>
+                <h2>¿Tienes alguna pregunta?</h2>
+                <p>Déjanos tu consulta. Este formulario es una demostración y no envía datos.</p>
+            </div>
+            <form action="#contacto" method="get"><label for="nombre">Nombre</label><input id="nombre" name="nombre"
+                    required autocomplete="name" placeholder="Tu nombre"><label for="correo">Correo
+                    electrónico</label><input id="correo" name="correo" type="email" required autocomplete="email"
+                    placeholder="tu@correo.es"><label for="mensaje">Mensaje</label><textarea id="mensaje" name="mensaje"
+                    rows="3" required placeholder="Escribe tu consulta"></textarea><button type="submit"
+                    class="boton">Preparar consulta →</button><small>Demostración: no se almacenan ni envían
+                    datos.</small></form>
+        </section>
+    </main>
+    <footer class="pie"><span>FitHome · Entrena a tu ritmo</span><a href="laboratorio.html">Laboratorio CSS</a><a
+            href="index.html#contacto">Contacto</a></footer>
+</body>
+
+</html>

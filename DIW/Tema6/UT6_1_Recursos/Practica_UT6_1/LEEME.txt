@@ -1,0 +1,20 @@
+UT6.1 · La misma pantalla con Tailwind
+Almudena Marchena Gómez · IES Polígono Sur
+
+Extrae el ZIP completo. Abre la carpeta UT6_1_Recursos en VS Code.
+Abre referencia_css/index.html y practica_inicio/index.html en el navegador.
+Sigue el PDF UT6_1_Practica_La_misma_pantalla_con_Tailwind.
+Guarda con Ctrl+S y recarga con Ctrl+R.
+
+El inicio está por completar. ejemplo_minimo permite comprobar Tailwind.
+La carpeta mi_proyecto es el destino de la copia de tu pantalla propia.
+Tailwind Browser 4.3.3 está incluido en vendor: no necesitas conexión,
+Node, terminal ni servidor para UT6.1. Usa Firefox o Chrome actualizado.
+No muevas solo index.html: conserva la ruta a vendor.
+
+Los ejemplos SCSS acompañan a la teoría y no son obligatorios en UT6.1.
+Ya incluyen CSS generado. Para recompilar: Node/npm disponibles, terminal
+en ejemplos_scss, npm install y npm run compilar. No entregues node_modules.
+
+Tailwind Browser es para aprendizaje y desarrollo. Para publicar se genera
+CSS estático con herramientas de construcción. Lee la teoría, página 8.

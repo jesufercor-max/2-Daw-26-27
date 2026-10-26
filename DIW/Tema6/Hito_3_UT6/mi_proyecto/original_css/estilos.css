@@ -1,0 +1,823 @@
+/* FitHome · estructura compartida, Hito 2 */
+* {
+    box-sizing: border-box
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    margin: 0;
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    line-height: 1.5
+}
+
+img {
+    display: block;
+    max-width: 100%;
+    height: auto
+}
+
+a {
+    color: inherit;
+    text-decoration: none
+}
+
+button,
+input,
+textarea {
+    font: inherit
+}
+
+button,
+a,
+input,
+textarea {
+    outline-offset: 3px
+}
+
+h1,
+h2,
+h3,
+p {
+    margin-top: 0
+}
+
+h1 {
+    font-size: clamp(1.65rem, 3vw, 2.6rem);
+    line-height: 1.15
+}
+
+h2 {
+    font-size: 1.35rem;
+    line-height: 1.2
+}
+
+h3 {
+    font-size: 1rem
+}
+
+.contenedor {
+    max-width: 1220px;
+    margin: auto;
+    padding: 30px 26px 70px
+}
+
+.cabecera {
+    max-width: 1272px;
+    margin: auto;
+    min-height: 70px;
+    padding: 12px 26px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px
+}
+
+.marca {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    font-weight: 800;
+    font-size: 1.15rem
+}
+
+.logo {
+    display: grid;
+    place-items: center;
+    width: 28px;
+    height: 28px;
+    border-radius: 8px;
+    background: #5348ed;
+    color: white
+}
+
+.navegacion,
+.cabecera-derecha {
+    display: flex;
+    align-items: center;
+    gap: 25px
+}
+
+.navegacion a {
+    font-size: .85rem;
+    padding: 9px 0
+}
+
+.navegacion a[aria-current] {
+    font-weight: 700;
+    border-bottom: 3px solid #5546f1
+}
+
+.racha {
+    font-size: .8rem;
+    padding: 5px 12px;
+    border-radius: 25px
+}
+
+.avatar {
+    width: 29px;
+    height: 29px;
+    border: 2px solid #6354f1;
+    border-radius: 50%
+}
+
+.hero {
+    display: grid;
+    grid-template-columns: 1.6fr 1fr;
+    min-height: 210px;
+    overflow: hidden;
+    border-radius: 20px
+}
+
+.hero-texto {
+    padding: 35px 32px;
+    align-self: center
+}
+
+.hero h1 {
+    margin: 12px 0
+}
+
+.hero h1 em {
+    font-style: normal
+}
+
+.hero p {
+    font-size: .93rem
+}
+
+.hero>img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover
+}
+
+.etiqueta {
+    display: inline-block;
+    border-radius: 30px;
+    padding: 4px 10px;
+    font-size: .65rem;
+    font-weight: 800
+}
+
+.filtros {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: end;
+    margin: 26px 0
+}
+
+.busqueda {
+    flex: 1;
+    max-width: 610px
+}
+
+.busqueda label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 9px
+}
+
+.busqueda input {
+    width: 100%;
+    padding: 13px 16px;
+    border-radius: 12px;
+    border: 1px solid
+}
+
+.categorias h2 {
+    font-size: .7rem;
+    letter-spacing: .07em;
+    margin-bottom: 8px
+}
+
+.chips {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px
+}
+
+.chip {
+    border-radius: 30px;
+    padding: 10px 15px;
+    font-size: .82rem;
+    white-space: nowrap
+}
+
+.seccion {
+    margin-top: 26px
+}
+
+.titulo-fila {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin-bottom: 16px
+}
+
+.titulo-fila h2 {
+    margin-bottom: 2px
+}
+
+.titulo-fila p,
+.tarjeta p,
+.detalle-info>p,
+.nota {
+    font-size: .85rem
+}
+
+.enlace {
+    font-size: .82rem;
+    font-weight: 600
+}
+
+.rejilla {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px
+}
+
+.tarjeta {
+    min-width: 0;
+    overflow: hidden;
+    border-radius: 17px
+}
+
+.tarjeta img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover
+}
+
+.tarjeta-contenido {
+    padding: 14px 16px 19px
+}
+
+.tarjeta h3 {
+    margin-bottom: 2px
+}
+
+.tarjeta p {
+    margin-bottom: 26px
+}
+
+.contacto {
+    margin-top: 55px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 35px;
+    padding: 26px;
+    border-radius: 18px
+}
+
+.contacto form {
+    display: grid;
+    gap: 7px
+}
+
+.contacto input,
+.contacto textarea {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid;
+    border-radius: 8px
+}
+
+.contacto label {
+    font-weight: 600;
+    font-size: .85rem
+}
+
+.contacto small {
+    font-size: .75rem
+}
+
+.boton {
+    display: inline-block;
+    text-align: center;
+    padding: 12px 20px;
+    border: 0;
+    border-radius: 10px;
+    font-size: .9rem;
+    cursor: pointer
+}
+
+.pie {
+    max-width: 1220px;
+    margin: auto;
+    padding: 24px 26px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 14px;
+    font-size: .8rem
+}
+
+.migas {
+    font-size: .8rem;
+    margin: 12px 0 26px
+}
+
+.detalle-rejilla {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px
+}
+
+.foto-detalle {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden
+}
+
+.foto-detalle img {
+    width: 100%;
+    aspect-ratio: 1.15;
+    object-fit: cover
+}
+
+.foto-badge,
+.ritmo-badge {
+    position: absolute;
+    left: 16px;
+    bottom: 14px;
+    background: #131c2fdb;
+    color: white;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: .75rem
+}
+
+.consejo {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+    padding: 16px;
+    border-radius: 14px;
+    font-size: .85rem
+}
+
+.sobretitulo {
+    font-size: .72rem;
+    font-weight: 800
+}
+
+.detalle-info h1 {
+    margin: 12px 0
+}
+
+.estadisticas {
+    display: flex;
+    gap: 10px;
+    margin: 24px 0 30px
+}
+
+.estadisticas>div {
+    flex: 1;
+    min-width: 0;
+    border-radius: 12px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column
+}
+
+.estadisticas span {
+    font-size: .7rem
+}
+
+.estadisticas strong {
+    font-size: .84rem
+}
+
+.detalle-info h2 {
+    font-size: 1.15rem
+}
+
+.pasos {
+    padding-left: 28px;
+    margin: 18px 0 26px
+}
+
+.pasos li {
+    padding: 0 0 15px 10px;
+    font-size: .85rem
+}
+
+.pasos li::marker {
+    font-weight: 800
+}
+
+.boton-entrenar {
+    min-width: 260px
+}
+
+.nota {
+    margin: 12px 0
+}
+
+.entreno {
+    max-width: 1240px;
+    margin: 0 auto 60px;
+    padding: 18px 24px 25px;
+    border-radius: 0 0 14px 14px
+}
+
+.entreno-cabecera {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    margin-bottom: 20px;
+    font-size: .8rem
+}
+
+.progreso {
+    height: 5px;
+    max-width: 200px;
+    flex: 1;
+    border-radius: 10px;
+    overflow: hidden
+}
+
+.progreso span {
+    display: block;
+    height: 100%;
+    background: #5546f1
+}
+
+.entreno-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 24px
+}
+
+.entreno-imagen {
+    position: relative;
+    min-height: 450px;
+    border-radius: 17px;
+    overflow: hidden
+}
+
+.entreno-imagen img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    inset: 0
+}
+
+.ritmo-badge {
+    top: 14px;
+    bottom: auto
+}
+
+.entreno-consejo {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: 12px;
+    padding: 12px;
+    border-radius: 12px;
+    background: #101727d9;
+    color: #fff;
+    font-size: .85rem
+}
+
+.entreno-panel {
+    padding: 28px 26px;
+    border-radius: 18px;
+    display: flex;
+    flex-direction: column
+}
+
+.entreno-panel h1 {
+    font-size: 1.9rem;
+    margin: 8px 0 0
+}
+
+.entreno-panel>p {
+    font-size: .8rem
+}
+
+.contador {
+    padding: 20px;
+    margin: 25px 0 18px;
+    text-align: center;
+    border-radius: 15px
+}
+
+.contador strong {
+    display: block;
+    font-size: 4.5rem;
+    line-height: 1;
+    font-weight: 400
+}
+
+.contador span {
+    font-size: .82rem
+}
+
+.ritmo-fila {
+    display: flex;
+    justify-content: space-between;
+    font-size: .8rem
+}
+
+.puntos {
+    text-align: center;
+    letter-spacing: 4px;
+    font-size: 1.15rem;
+    margin: 12px 0
+}
+
+.controles {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin: 16px 0
+}
+
+.controles button {
+    border: 0;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer
+}
+
+.siguiente {
+    text-align: center;
+    margin: 10px 0 40px
+}
+
+.entreno-panel .boton {
+    margin-top: auto
+}
+
+.resultado {
+    min-height: 60vh;
+    display: grid;
+    place-items: center
+}
+
+.aviso-exito {
+    padding: 35px;
+    border-radius: 18px;
+    text-align: center
+}
+
+.laboratorio {
+    max-width: 850px
+}
+
+.laboratorio h2 {
+    margin-top: 30px
+}
+
+.laboratorio-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+.laboratorio-grid>div {
+    padding: 20px
+}
+
+.demo-con {
+    border-radius: 16px;
+    box-shadow: 0 3px 20px #0002
+}
+
+.demo-con h3 {
+    color: #5546f1
+}
+
+.demo-externa {
+    padding: 14px;
+    border-left: 5px solid #5546f1
+}
+
+@media(max-width:900px) {
+    .rejilla {
+        grid-template-columns: repeat(2, minmax(0, 1fr))
+    }
+
+    .filtros {
+        align-items: stretch;
+        flex-direction: column
+    }
+
+    .detalle-rejilla {
+        gap: 20px
+    }
+
+    .estadisticas {
+        flex-wrap: wrap
+    }
+
+    .entreno-grid {
+        grid-template-columns: 1fr 1fr
+    }
+
+    .entreno-imagen {
+        min-height: 400px
+    }
+}
+
+@media(max-width:600px) {
+    .contenedor {
+        padding: 14px 16px 40px
+    }
+
+    .cabecera {
+        padding: 12px 16px;
+        flex-wrap: wrap
+    }
+
+    .navegacion {
+        order: 3;
+        width: 100%;
+        justify-content: center;
+        gap: 24px
+    }
+
+    .cabecera-derecha {
+        gap: 8px
+    }
+
+    .hero {
+        grid-template-columns: 1fr;
+        min-height: 0
+    }
+
+    .hero-texto {
+        padding: 20px
+    }
+
+    .hero>img {
+        display: none
+    }
+
+    .hero h1 {
+        font-size: 1.65rem
+    }
+
+    .hero p {
+        font-size: .8rem;
+        margin-bottom: 0
+    }
+
+    .filtros {
+        gap: 14px;
+        margin: 17px 0
+    }
+
+    .busqueda label {
+        display: none
+    }
+
+    .categorias h2 {
+        display: none
+    }
+
+    .chips {
+        gap: 5px
+    }
+
+    .chip {
+        padding: 8px 10px;
+        font-size: .75rem
+    }
+
+    .titulo-fila h2 {
+        font-size: 1.15rem
+    }
+
+    .titulo-fila p {
+        font-size: .75rem
+    }
+
+    .rejilla {
+        grid-template-columns: 1fr;
+        gap: 10px
+    }
+
+    .tarjeta {
+        display: grid;
+        grid-template-columns: 105px minmax(0, 1fr);
+        min-height: 104px
+    }
+
+    .tarjeta img {
+        height: 100%;
+        min-height: 104px
+    }
+
+    .tarjeta-contenido {
+        padding: 10px
+    }
+
+    .tarjeta h3 {
+        font-size: .85rem
+    }
+
+    .tarjeta p {
+        font-size: .73rem;
+        margin-bottom: 5px
+    }
+
+    .tarjeta .enlace {
+        font-size: .75rem
+    }
+
+    .contacto {
+        grid-template-columns: 1fr;
+        padding: 18px;
+        margin-top: 28px
+    }
+
+    .detalle-rejilla {
+        grid-template-columns: 1fr
+    }
+
+    .foto-detalle img {
+        aspect-ratio: 1.4
+    }
+
+    .detalle-info h1 {
+        font-size: 1.65rem
+    }
+
+    .estadisticas {
+        gap: 6px;
+        margin: 15px 0
+    }
+
+    .estadisticas>div {
+        padding: 9px
+    }
+
+    .boton-entrenar {
+        width: 100%
+    }
+
+    .entreno {
+        padding: 10px 12px
+    }
+
+    .entreno-grid {
+        grid-template-columns: 1fr;
+        gap: 0
+    }
+
+    .entreno-imagen {
+        min-height: 240px;
+        border-radius: 12px 12px 0 0
+    }
+
+    .entreno-panel {
+        border-radius: 0 0 12px 12px;
+        padding: 16px;
+        min-height: 400px
+    }
+
+    .entreno-panel h1 {
+        font-size: 1.5rem
+    }
+
+    .contador {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin: 10px 0;
+        padding: 12px
+    }
+
+    .contador strong {
+        font-size: 3rem
+    }
+
+    .puntos {
+        font-size: .9rem
+    }
+
+    .siguiente {
+        margin: 8px 0 20px
+    }
+
+    .laboratorio-grid {
+        grid-template-columns: 1fr
+    }
+}
+
+.tarjeta.destacada {
+    outline: 2px solid #786bfa;
+    outline-offset: -2px
+}

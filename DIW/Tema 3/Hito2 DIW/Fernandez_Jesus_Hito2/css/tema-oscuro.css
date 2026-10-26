@@ -1,0 +1,135 @@
+/* Tema oscuro alternativo */
+:root {
+    color-scheme: dark
+}
+
+body {
+    background: #101523;
+    color: #f4f5ff
+}
+
+.cabecera,
+.pie {
+    background: #101523
+}
+
+.navegacion a[aria-current],
+.enlace,
+.sobretitulo,
+.migas strong {
+    color: #a89cff
+}
+
+.racha,
+.consejo {
+    background: #263d2e;
+    color: #d2ffa8
+}
+
+.hero,
+.entreno {
+    background: #080c16;
+    color: #fff
+}
+
+.hero h1 em {
+    color: #d1fa69
+}
+
+.etiqueta {
+    background: #d5fa75;
+    color: #12231a
+}
+
+.busqueda input,
+.chip,
+.tarjeta,
+.contacto,
+.estadisticas>div,
+.entreno-panel,
+.demo-con,
+.aviso-exito {
+    background: #20283b;
+    color: #f5f5ff
+}
+
+.busqueda input,
+.contacto input,
+.contacto textarea {
+    background: #141a2a;
+    color: #fff;
+    border-color: #495269
+}
+
+.chip.seleccionado {
+    background: #6659f5;
+    color: #fff
+}
+
+.tarjeta {
+    box-shadow: 0 5px 18px #0006
+}
+
+.tarjeta p,
+.titulo-fila p,
+.detalle-info>p,
+.nota,
+.migas,
+.entreno-panel>p {
+    color: #b6bfd4
+}
+
+.contacto {
+    background: #1a2234
+}
+
+.boton {
+    background: #7165ff;
+    color: #fff
+}
+
+.boton:hover {
+    background: #5143dd
+}
+
+.contador {
+    background: #303357;
+    color: #bdb6ff
+}
+
+.ritmo-fila span {
+    color: #a6f4b9
+}
+
+.puntos {
+    color: #9d91ff
+}
+
+.controles button {
+    background: #31394b;
+    color: #fff
+}
+
+.controles button:nth-child(2) {
+    background: #0a1020;
+    color: #d5fa75
+}
+
+.progreso {
+    background: #43495e
+}
+
+.demo-con {
+    background: #20283b
+}
+
+.aviso-exito {
+    border: 1px solid #447a58
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid #d1fa69
+}

@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda del centro</title>
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body class="body">
+<div id="pagina" class="page">
+  <!-- PASO 4: cabecera, marca y lista -->
+  <header class="header">
+    <a class="marca" href="#inicio">Agenda del centro</a>
+    <nav aria-label="Principal">
+      <ul class="menu">
+        <li><a class="link" href="#actividades">Actividades</a></li>
+        <li><a class="link" href="#inscripcion">Inscripción</a></li>
+        <li><a class="link" href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="inicio">
+    <!-- PASO 3: título y estilos generales -->
+    <h1 class="h1">Aprende y comparte</h1>
+    <p>Descubre los talleres de esta semana y participa.</p>
+    <section id="actividades" class="section" aria-labelledby="titulo-actividades">
+      <h2 id="titulo-actividades" class="h2">Próximas actividades</h2>
+      <!-- PASO 6: rejilla responsive -->
+      <div id="tarjetas" class="grid">
+        <!-- PASO 5: tarjeta 1 -->
+        <article class="card">
+          <h3 class="h3">Fotografía</h3>
+          <p class="p">Aprende a encuadrar y a utilizar la luz.</p>
+          <p class="p">Viernes · 16:00</p>
+          <a class="cardlink" href="#contacto">Consultar fotografía</a>
+        </article>
+        <!-- PASO 5: tarjeta 2 -->
+        <article class="card">
+          <h3 class="h3">Lectura</h3>
+          <p class="p">Comparte tu libro favorito y descubre nuevas historias con el grupo. Trae una propuesta para la próxima sesión.</p>
+          <p class="p">Viernes · 17:00</p>
+          <a class="cardlink" href="#contacto">Consultar lectura</a>
+        </article>
+        <!-- PASO 5: tarjeta 3 -->
+        <article class="card">
+          <h3 class="h3">Robótica</h3>
+          <p class="p">Construye un mecanismo en equipo.</p>
+          <p class="p">Viernes · 18:00</p>
+          <a class="cardlink" href="#contacto">Consultar robótica</a>
+        </article>
+        <!-- PASO 5: tarjeta 4 -->
+        <article class="card">
+          <h3 class="h3">Dibujo</h3>
+          <p class="p">Practica formas y sombras con materiales sencillos.</p>
+          <p class="p">Viernes · 19:00</p>
+          <a class="cardlink" href="#contacto">Consultar dibujo</a>
+        </article>
+        <!-- PASO 5: tarjeta 5 -->
+        <article class="card">
+          <h3 class="h3">Ajedrez</h3>
+          <p class="p">Conoce las reglas y participa en partidas de iniciación.</p>
+          <p class="p">Viernes · 20:00</p>
+          <a class="cardlink" href="#contacto">Consultar ajedrez</a>
+        </article>
+        <!-- PASO 5: tarjeta 6 -->
+        <article class="card">
+          <h3 class="h3">Música</h3>
+          <p class="p">Explora ritmos y prepara una composición colectiva.</p>
+          <p class="p">Viernes · 21:00</p>
+          <a class="cardlink" href="#contacto">Consultar música</a>
+        </article>
+      </div>
+    </section>
+    <section id="inscripcion" class="section" aria-labelledby="titulo-inscripcion">
+      <h2 id="titulo-inscripcion" class="h2">Inscripción</h2>
+      <p>Consulta las plazas en tu tutoría. Conserva esta referencia:</p>
+      <!-- PASO 7: cadena larga -->
+      <p id="codigo" class="code">ACTIVIDADES2026FOTOGRAFIAROBOTICALECTURADIBUJOAJEDREZMUSICACENTROPOLIGONOSURINSCRIPCION</p>
+    </section>
+    <section id="contacto" class="section" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto" class="h2">Contacto</h2>
+      <p>Pregunta en tu tutoría por horarios, materiales y plazas.</p>
+      <a class="link" href="#inicio">Volver al inicio</a>
+    </section>
+  </main>
+  <footer class="foot"><p>Proyecto de DIW · Agenda del centro</p></footer>
+</div>
+</body>
+</html>

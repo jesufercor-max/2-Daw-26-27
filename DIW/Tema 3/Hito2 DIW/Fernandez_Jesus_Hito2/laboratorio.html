@@ -1,0 +1,78 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="FitHome: ejercicios guiados para entrenar en casa">
+    <title>Laboratorio CSS · FitHome</title>
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/tema-claro.css" title="Claro">
+    <link rel="alternate stylesheet" href="css/tema-oscuro.css" title="Oscuro">
+</head>
+
+<body>
+    <style>
+        /* RA2.b: CSS interno */
+        .ejemplo-interno {
+            border: 3px dashed #765cf2;
+            padding: 1rem;
+            border-radius: 12px
+        }
+
+        /* RA2.e: especificidad */
+        .laboratorio .conflicto {
+            color: #126e41
+        }
+
+        .conflicto {
+            color: #d02c42
+        }
+
+        /* Empate de especificidad: gana la última */
+        .empate {
+            color: #126e41
+        }
+
+        .empate {
+            color: #6047ec
+        }
+    </style>
+    <header class="cabecera"><a class="marca" href="index.html"><span class="logo">ϟ</span> FitHome</a>
+        <nav class="navegacion" aria-label="Principal"><a href="index.html">Inicio</a><a
+                href="detalle.html">Ejercicios</a><a href="index.html#categorias">Categorías</a></nav>
+        <div class="cabecera-derecha"><span class="racha">♧ 3 días</span><span class="avatar" aria-hidden="true"></span>
+        </div>
+    </header>
+    <main class="contenedor laboratorio">
+        <h1>Laboratorio CSS · RA2.a, b y e</h1>
+        <p>Ejemplos independientes de los estilos del proyecto.</p>
+        <h2>RA2.a · El mismo HTML, dos presentaciones</h2>
+        <div class="laboratorio-grid">
+            <div class="demo-sin">
+                <h3>Sentadillas</h3>
+                <p>Fácil · 10 min</p><a href="detalle.html">Ver ejercicio</a>
+            </div>
+            <div class="demo-con">
+                <h3>Sentadillas</h3>
+                <p>Fácil · 10 min</p><a href="detalle.html">Ver ejercicio</a>
+            </div>
+        </div>
+        <h2>RA2.b · Tres lugares para definir CSS</h2>
+        <p style="background:#fff0c2;color:#332600;padding:1rem;border-radius:8px">Este párrafo tiene CSS directo en el
+            atributo style.</p>
+        <p class="ejemplo-interno">Este párrafo se diseña desde el bloque style del head.</p>
+        <p class="demo-externa">Este párrafo utiliza base.css (hoja externa).</p>
+        <h2>RA2.e · Cascada y redefinición</h2>
+        <p class="conflicto">Gana verde: «.laboratorio .conflicto» tiene mayor especificidad (0,2,0) que «.conflicto»
+            (0,1,0), aunque esta última aparece después.</p>
+        <p class="empate">Gana violeta: ambas reglas «.empate» tienen igual especificidad y prevalece la última.</p>
+        <h2>RA2.d · Temas alternativos</h2>
+        <p>En Firefox: Alt → Ver → Estilo de página → Claro/Oscuro. Si no está disponible, cambia los atributos rel de
+            los dos link del head, recarga y restaura Claro.</p>
+    </main>
+    <footer class="pie"><span>FitHome · Entrena a tu ritmo</span><a href="laboratorio.html">Laboratorio CSS</a><a
+            href="index.html#contacto">Contacto</a></footer>
+</body>
+
+</html>

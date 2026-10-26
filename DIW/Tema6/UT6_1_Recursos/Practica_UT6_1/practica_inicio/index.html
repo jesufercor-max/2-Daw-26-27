@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda del centro</title>
+  <script src="../vendor/tailwind-browser-4.3.3.js"></script>
+</head>
+
+<body class="font-[Arial] leading-normal text-[#243442] bg-[#f4f7f8]">
+  <div id="pagina" class="mx-auto w-[calc(100%-2rem)] max-w-[1120px]">
+    <!-- PASO 4: cabecera, marca y lista -->
+    <header class="flex flex-wrap items-center
+                  justify-between gap-4 py-4
+                  border-b-2 border-[#9cbbb2]">
+      <a class="font-bold" href="#inicio">Agenda del centro</a>
+      <nav aria-label="Principal">
+        <ul class="flex flex-wrap gap-3">
+          <li><a class="" href="#actividades">Actividades</a></li>
+          <li><a class="" href="#inscripcion">Inscripción</a></li>
+          <li><a class="" href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main id="inicio">
+      <!-- PASO 3: título y estilos generales -->
+      <h1 class="text-[2rem] leading-normal font-bold my-4">Aprende y comparte</h1>
+      <p>Descubre los talleres de esta semana y participa.</p>
+      <section id="actividades" class="my-8" aria-labelledby="titulo-actividades">
+        <h2 id="titulo-actividades" class="text-2xl leading-normal font-bold mb-4">Próximas actividades</h2>
+        <!-- PASO 6: rejilla responsive -->
+        <div id="tarjetas" class="grid grid-cols-1 gap-4 min-[600px]:grid-cols-2 min-[1000px]:grid-cols-3">
+          <!-- PASO 5: tarjeta 1 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Fotografía</h3>
+            <p class="mb-3">Aprende a encuadrar y a utilizar la luz.</p>
+            <p class="mb-3">Viernes · 16:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar fotografía</a>
+          </article>
+          <!-- PASO 5: tarjeta 2 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Lectura</h3>
+            <p class="mb-3">Comparte tu libro favorito y descubre nuevas historias con el grupo. Trae una propuesta para la
+              próxima sesión.</p>
+            <p class="mb-3">Viernes · 17:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar lectura</a>
+          </article>
+          <!-- PASO 5: tarjeta 3 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Robótica</h3>
+            <p class="mb-3">Construye un mecanismo en equipo.</p>
+            <p class="mb-3">Viernes · 18:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar robótica</a>
+          </article>
+          <!-- PASO 5: tarjeta 4 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Dibujo</h3>
+            <p class="mb-3">Practica formas y sombras con materiales sencillos.</p>
+            <p class="mb-3">Viernes · 19:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar dibujo</a>
+          </article>
+          <!-- PASO 5: tarjeta 5 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Ajedrez</h3>
+            <p class="mb-3">Conoce las reglas y participa en partidas de iniciación.</p>
+            <p class="mb-3">Viernes · 20:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar ajedrez</a>
+          </article>
+          <!-- PASO 5: tarjeta 6 -->
+          <article class="flex flex-col min-w-0 p-4 bg-white border border-[#9cbbb2] rounded-lg">
+            <h3 class="text-xl, leading-normal, font-bold y mb-3">Música</h3>
+            <p class="mb-3">Explora ritmos y prepara una composición colectiva.</p>
+            <p class="mb-3">Viernes · 21:00</p>
+            <a class="text-[#075e56] underline hover:text-[#9a3412] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#9a3412]" href="#contacto">Consultar música</a>
+          </article>
+        </div>
+      </section>
+      <section id="inscripcion" class="my-8" aria-labelledby="titulo-inscripcion">
+        <h2 id="titulo-inscripcion" class="text-2xl leading-normal font-bold mb-4">Inscripción</h2>
+        <p>Consulta las plazas en tu tutoría. Conserva esta referencia:</p>
+        <!-- PASO 7: cadena larga -->
+        <p id="codigo" class="[overflow-wrap:anywhere] p-4 border border-[#9cbbb2] bg-[#e4eeeb] font-mono">ACTIVIDADES2026FOTOGRAFIAROBOTICALECTURADIBUJOAJEDREZMUSICACENTROPOLIGONOSURINSCRIPCION
+        </p>
+      </section>
+      <section id="contacto" class="my-8" aria-labelledby="titulo-contacto">
+        <h2 id="titulo-contacto" class="text-2xl leading-normal font-bold mb-4">Contacto</h2>
+        <p>Pregunta en tu tutoría por horarios, materiales y plazas.</p>
+        <a class="" href="#inicio">Volver al inicio</a>
+      </section>
+    </main>
+    <footer class="mt-8 py-4 border-t-2 border-[#9cbbb2]">
+      <p>Proyecto de DIW · Agenda del centro</p>
+    </footer>
+  </div>
+</body>
+
+</html>

@@ -1,0 +1,5 @@
+Tailwind CSS Browser 4.3.3 · Tailwind Labs · Licencia MIT incluida.
+Copia local para aprendizaje; obtenida el 13/10/2026.
+https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4.3.3/dist/index.global.js
+Distribución minificada por jsDelivr; conserva el aviso inicial.
+https://tailwindcss.com/docs/installation/play-cdn
