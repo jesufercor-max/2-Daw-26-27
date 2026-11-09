@@ -1,0 +1,9 @@
+﻿CE,Descriptor_Classroom,Archivo_evidencia,Explicacion_breve,Estado
+RA3.a,Licencias y derechos,evidencias/licencias.csv; evidencias/LICENCIA_RECURSOS.txt,Procedencia y permiso educativo de los recursos del paquete registrados.,Completado
+RA3.b,Formatos multimedia,evidencias/comparaciones.csv,"Comparación de PNG/JPEG, WAV y WebM; se conserva el OGG y MP4 de comparación en originales.",Completado
+RA3.c,Herramientas,evidencias/proceso_E1.md,Se documentan herramienta principal y alternativas de edición.,Completado
+RA3.d,Edición de imagen,evidencias/captura_01_imagen.png (pendiente),"Recorte 2 %, ancho 800 px, título y dos formatos; realizar captura real.",Captura pendiente
+RA3.e,Edición de audio y vídeo,evidencias/captura_02_audio.png y captura_03_video.png (pendientes),"Recorte, ganancia, fundidos, frecuencias, dimensiones y bitrates registrados.",Capturas pendientes
+RA3.f,Animación desde imágenes fijas,evidencias/captura_04_animacion.png (pendiente),"Tres fotogramas por nombre, 1 s por imagen y dos repeticiones.",Captura pendiente
+RA3.g,Importación y exportación,proyecto/ajustes.json; exportaciones/,"Se conserva JSON, originales y siete resultados; comprobar reproducción en navegador.",Comprobación local pendiente
+RA3.h,Aplicación de guía de estilo,evidencias/guia_estilo.md; exportaciones/,"Título común, color principal y proporciones aplicados a imagen y vídeo.",Completado

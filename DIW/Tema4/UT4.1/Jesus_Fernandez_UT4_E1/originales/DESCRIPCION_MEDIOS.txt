@@ -1,0 +1,5 @@
+Imagen: cartel ilustrado de un taller multimedia, con tres fases: observa, edita y comparte.
+Audio: secuencia sintética de tonos suaves; ocho segundos, con silencio inicial y final. No contiene habla ni música de terceros.
+Vídeo: cartel y marcador que se desplaza horizontalmente. Diez segundos, 640x360, 10 fps, sin audio.
+Fotogramas: tres imágenes que resaltan por turnos observa, edita y comparte.
+Las alternativas textuales finales deben describir tu exportación, no copiar esta descripción si cambias el significado.

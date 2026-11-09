@@ -1,0 +1,56 @@
+COMENZAR EN UBUNTU - SIN INSTALAR PROGRAMAS
+
+Este ZIP contiene Bootstrap 5.3.8 (fuentes SCSS) y Dart Sass 1.93.2 portátil.
+Sirve para Ubuntu de 64 bits, Intel/AMD (x86_64) o ARM64 (aarch64).
+No necesitas permisos de administrador, Node.js ni npm.
+Tras descargar el ZIP puedes editar y compilar sin conexión.
+
+1. En Archivos, clic derecho sobre el ZIP > Extraer aquí.
+2. Mueve la carpeta extraída a Documentos, dentro de tu carpeta personal.
+   Trabaja sobre una copia nueva; no mezcles este ZIP con el anterior.
+3. Entra en la carpeta del proyecto. Debes ver index.html y compilar.sh.
+4. Clic derecho en un hueco de esa carpeta > Abrir en una terminal.
+   También puedes abrir la carpeta en VS Code > Terminal > Nuevo terminal.
+5. Escribe estas órdenes una a una, pulsando Intro:
+
+   pwd
+   ls
+   bash compilar.sh
+
+6. Debe aparecer: COMPILACION CORRECTA: css/estilos.css actualizado.
+7. Abre index.html con Firefox.
+8. Cuando cambies un archivo SCSS: Ctrl+S, bash compilar.sh y Ctrl+R.
+
+No escribas los comandos en la consola de Firefox.
+El script funciona mediante bash: no necesitas marcar compilar.sh como ejecutable.
+Ajusta automáticamente el permiso de ejecución del compilador dentro de TU carpeta.
+No instala nada ni cambia permisos del sistema.
+
+ARCHIVOS
+scss/: aquí editas tu diseño.
+css/estilos.css: lo genera Sass; no lo edites a mano.
+vendor/bootstrap/scss/: fuentes de Bootstrap; no las modifiques.
+herramientas/: compilador y licencias incluidos; conserva esta carpeta completa.
+compilar.sh: ejecuta la compilación y conserva el CSS anterior si hay un error.
+
+PROBLEMAS
+- compilar.sh no existe: usa ls y entra en la carpeta que lo contiene.
+- Falta el compilador: extrae todo el ZIP, no solo los archivos HTML.
+- Error de sintaxis: mira el archivo y la línea que indica Sass; corrige y repite.
+- Permission denied: trabaja en tu carpeta personal, no en un USB o carpeta de red.
+  Si la política del centro bloquea también ejecutar programas en la carpeta personal,
+  comunícalo a la profesora. Esta solución no evita ese bloqueo adicional.
+- Arquitectura no compatible: ejecuta uname -m y comunica el resultado.
+- El diseño no cambia: guarda el SCSS, espera el mensaje de éxito y recarga.
+
+SERVIDOR LOCAL OPCIONAL (Hito 4, formularios y medios)
+Si el equipo ya incluye Python 3, en otra terminal de esta carpeta ejecuta:
+python3 -m http.server 8000 --bind 127.0.0.1
+Abre http://127.0.0.1:8000 en Firefox. Ctrl+C detiene el servidor.
+No instala nada ni guarda formularios. Si el puerto está ocupado, utiliza 8001.
+Si no existe python3, abre index.html para maquetar y compilar.
+Para las pruebas que requieren HTTP, utiliza el servidor del aula disponible.
+
+ENTREGA
+Entrega la carpeta del proyecto completa (también herramientas/ y vendor/).
+No necesitas package.json, package-lock.json ni node_modules.

@@ -1,0 +1,14 @@
+@use "tema";
+@function espacio($pasos) {
+  @return $pasos * tema.$unidad;
+}
+@mixin borde($color) {
+  border-left: 4px solid $color;
+}
+// PASO 5: crea aquí el mixin panel($fondo).
+@mixin panel($fondo) {
+  background-color: $fondo;
+  padding: espacio(6); 
+  border-radius: tema.$radio;
+  border: 1px solid tema.$marca;
+}

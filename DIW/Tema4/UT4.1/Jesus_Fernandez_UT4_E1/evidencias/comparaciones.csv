@@ -1,0 +1,8 @@
+﻿Medio,Archivo,Formato_y_codec,Dimensiones_o_frecuencia,Duracion_s,Calidad_o_bitrate_solicitado,Peso_bytes,Observaciones,Eleccion_justificada
+Imagen,imagen_800.png,PNG,800 × 450 px,—,Sin pérdida (PNG),47440,El texto añadido y el recorte generan una imagen mayor que el original; PNG conserva bordes nítidos.,PNG si prima la nitidez; JPEG si prima el peso.
+Imagen,imagen_800.jpg,JPEG,800 × 450 px,—,"Calidad 0,8",26182,"Menor peso que PNG; compresión con pérdida, revisar bordes finos.",JPEG para difusión web por su menor tamaño.
+Audio,audio_44100.wav,WAV PCM s16le mono,44100 Hz,"6,00","Ganancia 0,8; fundidos 0,2 s",529278,Conserva mayor frecuencia de muestreo; archivo más pesado.,Adecuado si se prioriza conservar detalle de la señal.
+Audio,audio_22050.wav,WAV PCM s16le mono,22050 Hz,"6,00","Ganancia 0,8; fundidos 0,2 s",264678,Para estos tonos sintéticos la escucha es muy similar; ocupa aproximadamente la mitad.,Elegiría 22050 Hz para esta señal por su menor peso.
+Vídeo,video_480_600.webm,"WebM VP8, sin audio",480 × 270 px,"6,00",600 kbps solicitados,24115,Movimiento y título visibles; peso menor en esta exportación.,600 kbps si la reproducción mantiene calidad suficiente.
+Vídeo,video_480_1200.webm,"WebM VP8, sin audio",480 × 270 px,"6,00",1200 kbps solicitados,27397,El peso real no duplica el de 600 kbps; depende del contenido y del codificador.,1200 kbps si se aprecia mejora visual que justifique el peso.
+Animacion,animacion.webm,"WebM VP8, sin audio",640 × 360 px,"6,00",1 s/imagen; 2 repeticiones,31084,"Secuencia observa, edita y comparte repetida dos veces.",WebM permite reproducir la secuencia como vídeo.

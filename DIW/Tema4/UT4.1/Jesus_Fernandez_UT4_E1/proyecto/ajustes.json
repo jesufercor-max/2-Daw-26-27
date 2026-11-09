@@ -1,0 +1,34 @@
+{
+  "herramienta": "Laboratorio multimedia DIW",
+  "version": 1,
+  "originales": {
+    "imagen": "cartel_original.png",
+    "audio": "sonido_original.wav",
+    "video": "clip_original.webm",
+    "fotogramas": [
+      "fotograma_01.png",
+      "fotograma_02.png",
+      "fotograma_03.png"
+    ]
+  },
+  "ajustes": {
+    "imgWidth": "800",
+    "imgCrop": "2",
+    "imgTitle": "Observa, edita y comparte",
+    "imgColor": "#075e56",
+    "imgFormat": "image/jpeg",
+    "imgQuality": "0.8",
+    "audioStart": "1",
+    "audioEnd": "7",
+    "audioGain": "0.8",
+    "audioFade": "0.2",
+    "audioRate": "22050",
+    "videoStart": "1",
+    "videoEnd": "7",
+    "videoWidth": "480",
+    "videoRate": "1200",
+    "videoTitle": "Observa, edita y comparte",
+    "frameSeconds": "1",
+    "frameLoops": "2"
+  }
+}

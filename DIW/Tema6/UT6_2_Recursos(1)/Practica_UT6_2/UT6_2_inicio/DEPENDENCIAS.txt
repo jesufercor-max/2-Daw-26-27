@@ -1,0 +1,8 @@
+Dependencias distribuidas para uso local en el aula:
+Bootstrap 5.3.8. https://getbootstrap.com/ - licencia MIT (incluida).
+Dart Sass 1.93.2. https://github.com/sass/dart-sass/releases/tag/1.93.2
+Distribuciones oficiales Linux x64 y ARM64. Licencias en herramientas/.
+Documentación: https://sass-lang.com/install/#standalone
+El script compilar.sh y las plantillas son material didáctico.
+SHA256 del archivo original Sass x64: 6495460029dd1356f358da2ad65c7827e83a022b3d8fc66f9e65116bca6d6761
+SHA256 del archivo original Sass arm64: fb06f4c498b7c813160be5d434550e90217561634788694a37e044ad1538decf

@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Agenda del centro · Bootstrap y SCSS</title>
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <header class="container cabecera-propia d-flex flex-wrap align-items-center justify-content-between gap-3">
+    <a class="marca-propia fw-bold" href="#inicio">Agenda del centro</a>
+    <nav aria-label="Principal">
+      <ul class="d-flex flex-wrap gap-3 list-unstyled m-0">
+        <li><a href="#actividades">Actividades</a></li>
+        <li><a href="#informacion">Información</a></li>
+        <li><a href="#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main id="inicio" class="container py-4">
+    <h1 class="mb-4">Aprende y comparte</h1>
+    <!-- PASO 3: añade un aviso estático con alert alert-info. -->
+    <div class="alert alert-info" data-bs-theme="light">
+      <strong>Plazo de inscripción abierto:</strong> Reserva tu plaza antes del próximo viernes. Las plazas son limitadas para garantizar la calidad de los talleres.
+    </div>
+
+    <section id="actividades" aria-labelledby="titulo-actividades" class="mb-5">
+      <h2 id="titulo-actividades" class="mb-3">Actividades</h2>
+      <div class="row g-3">
+        <!-- 1. Fotografía -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Fotografía</h3>
+              <p class="card-text">Aprende a encuadrar y utilizar la luz.</p>
+              <p>Viernes · 17:00</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 2. Yoga y Meditación -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Yoga y Meditación</h3>
+              <p class="card-text">Conecta tu mente y cuerpo a través de posturas y respiración consciente.</p>
+              <p>Lunes · 08:30</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 3. Cocina Italiana -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Cocina Italiana</h3>
+              <p class="card-text">Descubre los secretos para preparar pasta fresca y salsas artesanales.</p>
+              <p>Martes · 19:00</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 4. Pintura Acuarela -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Pintura Acuarela</h3>
+              <p class="card-text">Domina las técnicas de degradado, transparencias y mezclas de color.</p>
+              <p>Miércoles · 16:30</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 5. Programación Web -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Programación Web</h3>
+              <p class="card-text">Da tus primeros pasos en el desarrollo frontend aprendiendo HTML, CSS y JS.</p>
+              <p>Jueves · 18:00</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+
+        <!-- 6. Baile Latino -->
+        <div class="col-12 col-md-6 col-lg-4">
+          <article class="card h-100">
+            <div class="card-body d-flex flex-column">
+              <h3 class="card-title h5">Baile Latino</h3>
+              <p class="card-text">Aprende los ritmos básicos de salsa y bachata mientras te diviertes.</p>
+              <p>Sábado · 11:00</p>
+              <a class="btn btn-primary mt-auto" href="#contacto">Consultar</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- PASO 5: añade la clase panel-info. -->
+    <section id="informacion" class="panel-info mt-4" aria-labelledby="titulo-informacion">
+      <h2 id="titulo-informacion" class="h4">Información</h2>
+      <p>Completa este texto con información de tu proyecto.</p>
+    </section>
+
+    <!-- PASO 5: añade panel-ayuda y separacion-propia, sin mt-*. -->
+    <section id="ayuda" class="panel-ayuda separacion-propia" aria-labelledby="titulo-ayuda">
+      <h2 id="titulo-ayuda" class="h4">Ayuda</h2>
+      <p>Escribe cómo obtener ayuda para participar.</p>
+    </section>
+
+    <section id="contacto" class="mt-4" aria-labelledby="titulo-contacto">
+      <h2 id="titulo-contacto" class="h4">Contacto</h2>
+      <p>Demostración: no se envía una reserva real.</p>
+      <!-- PASO 3: construye aquí el formulario con method="get". -->
+      <form action="#" method="get">
+        <!-- Campo Nombre -->
+        <div class="mb-3">
+          <label for="input-nombre" class="form-label">Nombre completo</label>
+          <input type="text" class="form-control" id="input-nombre" name="nombre" placeholder="Tu nombre y apellidos" required>
+        </div>
+
+        <!-- Campo Correo -->
+        <div class="mb-3">
+          <label for="input-email" class="form-label">Correo electrónico</label>
+          <input type="email" class="form-control" id="input-email" name="email" placeholder="nombre@ejemplo.com" required>
+        </div>
+
+        <!-- Campo Actividad (Desplegable) -->
+        <div class="mb-3">
+          <label for="select-actividad" class="form-label">Selecciona una actividad</label>
+          <select class="form-select" id="select-actividad" name="actividad" required>
+            <option value="" selected disabled>Elige un taller...</option>
+            <option value="fotografia">Fotografía</option>
+            <option value="yoga">Yoga y Meditación</option>
+            <option value="cocina">Cocina Italiana</option>
+            <option value="pintura">Pintura Acuarela</option>
+            <option value="programacion">Programación Web</option>
+            <option value="baile">Baile Latino</option>
+          </select>
+        </div>
+
+        <!-- Botón de Envío -->
+        <button type="submit" class="btn btn-primary">Demostración: no se envía una reserva real</button>
+      </form>
+    </section>
+  </main>
+  <footer class="container py-4 border-top"><p>Proyecto de DIW · Agenda del centro</p></footer>
+</body>
+</html>
