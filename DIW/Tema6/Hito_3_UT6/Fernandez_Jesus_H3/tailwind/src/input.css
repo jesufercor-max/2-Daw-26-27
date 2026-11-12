@@ -1,0 +1,40 @@
+/* FitHome · Hito 3 · entrada de Tailwind (v4, configuración en CSS)
+   Regenerar: ver LEEME.txt (npm run build). */
+@import "tailwindcss";
+
+/* Dónde busca clases Tailwind (los HTML de esta carpeta) */
+@source "../*.html";
+
+/* Identidad de FitHome: paleta, tipografía y puntos de ruptura.
+   Cambiar un valor aquí lo cambia en todas las pantallas. */
+@theme {
+  --font-sans: Inter, Arial, Helvetica, sans-serif;
+
+  /* Mismos puntos de ruptura que el Hito 2 (600 y 900 px) */
+  --breakpoint-*: initial;
+  --breakpoint-sm: 600px;
+  --breakpoint-lg: 900px;
+
+  --color-fondo: #f5f6fb;
+  --color-tinta: #111827;
+  --color-suave: #657083;
+  --color-borde: #e2e5f0;
+  --color-marca: #5348ee;
+  --color-marca-osc: #392bca;
+  --color-acento: #786bfa;
+  --color-lima: #d5fa75;
+  --color-bosque: #12231a;
+  --color-verde: #196c3e;
+  --color-verde-claro: #effbd5;
+  --color-lavanda: #eaedfa;
+  --color-panel: #131c2f;
+}
+
+/* ÚNICA EXCEPCIÓN de CSS propio: anillo de foco común para teclado.
+   Se declara una vez con @apply en lugar de repetir 4 utilidades en cada
+   enlace, botón y campo. Equivale al a:focus-visible del Hito 2. */
+@layer base {
+  :where(a, button, input, textarea):focus-visible {
+    @apply outline-3 outline-offset-3 outline-marca;
+  }
+}

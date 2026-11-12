@@ -1,0 +1,46 @@
+FITHOME · HITO 3 · VARIANTE RESPONSIVE CON TAILWIND
+Jesús Fernández · 2.º DAW · DIW · 2026/27
+
+CÓMO ABRIR CADA VERSIÓN (doble clic o "Abrir con" el navegador; no hace falta servidor)
+  Versión CSS propio (Hito 2) ..... original_css/index.html
+  Versión Tailwind ................ tailwind/index.html
+
+PANTALLAS QUE SE COMPARAN (misma función en las dos versiones)
+  Listado / catálogo ... index.html   (original_css/index.html  <->  tailwind/index.html)
+  Detalle .............. detalle.html (original_css/detalle.html <->  tailwind/detalle.html)
+Recorrido de la variante: Inicio -> tarjeta o "Ver ejercicio" -> Detalle -> logo / "Ejercicios" -> Inicio.
+
+MÉTODO UTILIZADO PARA TAILWIND
+  Tailwind CSS v4 COMPILADO (no se usa el script Browser, así que no hay carpeta vendor/).
+  - HTML con utilidades: tailwind/index.html y tailwind/detalle.html
+  - Entrada y configuración (paleta, tipografía, puntos de ruptura 600 y 900 px): tailwind/src/input.css
+  - Resultado que cargan las páginas: tailwind/css/tailwind.css
+  - Dependencias declaradas: tailwind/package.json (opcional) y tailwind/compilar.sh
+  Orden para regenerar el CSS (sin root; descarga el ejecutable de Tailwind en tailwind/bin/):
+      cd tailwind
+      bash compilar.sh
+  (equivale a: tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify)
+  Alternativa con Node: npm install && npm run build. Se ha borrado tailwind/bin/ antes de entregar.
+  Licencia: tailwind.css conserva en su primera línea el aviso "MIT License" de Tailwind CSS.
+  CSS propio: una sola excepción documentada en src/input.css (anillo de foco común con @apply).
+
+CAMBIOS EN original_css RESPECTO AL HITO 2 ENTREGADO
+  Se corrigieron tres reglas de css/base.css que ocultaban contenido en móvil (≤600 px):
+  1) .hero>img{display:none}   -> la imagen del hero ahora se ve en móvil.
+  2) .busqueda label{display:none} -> la etiqueta del buscador ahora se ve en móvil.
+  3) .categorias h2{display:none}  -> el título CATEGORÍAS ahora se ve en móvil.
+  No se incluye evidencias/ del Hito 2 en esta carpeta; el resto del original no se ha modificado.
+
+DECISIONES Y LÍMITES CONOCIDOS
+  - El botón "Empezar entrenamiento" del detalle abre ../original_css/entrenamiento.html, porque
+    el entrenamiento guiado queda fuera de las dos pantallas de este hito.
+  - Se retira del pie el enlace "Laboratorio CSS" (solo tenía sentido en la versión CSS del Hito 2).
+  - El tema oscuro del Hito 2 no se traslada a Tailwind (no se pide en este hito).
+  - Como en el Hito 2, todas las tarjetas enlazan al único detalle (Sentadillas); es un prototipo.
+
+EVIDENCIAS
+  evidencias/informe.md  (comparación técnica y registro de pruebas)
+  evidencias/capturas/   (8 capturas: ver lista en informe.md)
+
+AYUDA UTILIZADA
+  Variante y documentación preparadas con ayuda de Claude (Anthropic) y revisadas por mí.

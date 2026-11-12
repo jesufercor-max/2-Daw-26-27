@@ -661,10 +661,6 @@ h3 {
         padding: 20px
     }
 
-    .hero>img {
-        display: none
-    }
-
     .hero h1 {
         font-size: 1.65rem
     }
@@ -677,14 +673,6 @@ h3 {
     .filtros {
         gap: 14px;
         margin: 17px 0
-    }
-
-    .busqueda label {
-        display: none
-    }
-
-    .categorias h2 {
-        display: none
     }
 
     .chips {
@@ -817,6 +805,7 @@ h3 {
     }
 }
 
+/* RA2.g: variante combinada de una clase reutilizable */
 .tarjeta.destacada {
     outline: 2px solid #786bfa;
     outline-offset: -2px

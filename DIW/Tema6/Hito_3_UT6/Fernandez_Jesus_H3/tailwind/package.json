@@ -1,0 +1,14 @@
+{
+  "name": "fithome-hito3-tailwind",
+  "private": true,
+  "version": "1.0.0",
+  "description": "FitHome · Hito 3 · variante con Tailwind CSS v4",
+  "scripts": {
+    "build": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --minify",
+    "watch": "tailwindcss -i ./src/input.css -o ./css/tailwind.css --watch"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.0",
+    "tailwindcss": "^4.1.0"
+  }
+}
